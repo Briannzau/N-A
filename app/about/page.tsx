@@ -64,10 +64,10 @@ export default function AboutPage() {
             </h2>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
@@ -84,35 +84,6 @@ export default function AboutPage() {
                 <p>
                   From AI-powered lead qualification and automated outbound sequences to intelligent pipeline management and predictive revenue forecasting—we deploy technology that scales beyond human limitations.
                 </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-2xl p-8 backdrop-blur-sm border border-green-500/20">
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">AI Agents Deployed</span>
-                    <span className="text-3xl font-bold text-green-500">500+</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">Automation Workflows</span>
-                    <span className="text-3xl font-bold text-green-500">1,200+</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">Manual Tasks Eliminated</span>
-                    <span className="text-3xl font-bold text-green-500">85%</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">GTM Velocity Increase</span>
-                    <span className="text-3xl font-bold text-green-500">400%</span>
-                  </div>
-                </div>
               </div>
             </motion.div>
           </div>
