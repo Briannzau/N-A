@@ -16,7 +16,7 @@ const values = [
   },
   {
     title: "Technology-Enabled",
-    description: "We leverage the latest AI and automation tools to give our clients unfair advantages.",
+    description: "We leverage the latest AI and automation tools to accelerate GTM functions and scale operations.",
   },
   {
     title: "Systems Mindset",
