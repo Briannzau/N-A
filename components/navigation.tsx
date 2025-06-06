@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button"
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
-  { name: "Portfolio", href: "/portfolio" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ]
@@ -43,7 +42,6 @@ export default function Navigation() {
               N/A
             </Link>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
                 <Link
@@ -64,7 +62,6 @@ export default function Navigation() {
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
             <button className="md:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -72,7 +69,6 @@ export default function Navigation() {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
