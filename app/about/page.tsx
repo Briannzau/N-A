@@ -3,48 +3,7 @@
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Linkedin, Twitter, Mail } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
-
-const team = [
-  {
-    name: "Alex Chen",
-    role: "Founder & GTM Strategist",
-    bio: "Former VP of Growth at Vercel. Built and scaled GTM operations from $0 to $100M ARR. Expert in product-market fit and automated outbound.",
-    experience: ["Vercel", "Netlify", "Stripe"],
-    image: "/placeholder.svg?height=400&width=400",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "alex@na-gtm.com",
-    },
-  },
-  {
-    name: "Sarah Rodriguez",
-    role: "Head of Operations",
-    bio: "Former Director of Sales Operations at JumpCrew. Specialized in GTM stack implementation and process automation. 8+ years in B2B SaaS.",
-    experience: ["JumpCrew", "Splash", "HubSpot"],
-    image: "/placeholder.svg?height=400&width=400",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "sarah@na-gtm.com",
-    },
-  },
-  {
-    name: "Marcus Kim",
-    role: "AI & Automation Lead",
-    bio: "Former ML Engineer at OpenAI. Builds AI agents for sales and marketing automation. PhD in Computer Science from Stanford.",
-    experience: ["OpenAI", "Anthropic", "Google"],
-    image: "/placeholder.svg?height=400&width=400",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "marcus@na-gtm.com",
-    },
-  },
-]
 
 const values = [
   {
@@ -193,78 +152,6 @@ export default function AboutPage() {
                   <CardContent className="p-6 text-center">
                     <h3 className="text-xl font-bold mb-4 font-space-grotesk text-green-500">{value.title}</h3>
                     <p className="text-gray-300 leading-relaxed">{value.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-space-grotesk">
-              Meet the <span className="text-green-500">Team</span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              GTM operators with proven track records at the world's fastest-growing companies
-            </p>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-              >
-                <Card className="bg-gray-900/50 border-gray-800 hover:border-green-500/50 transition-all duration-500 h-full overflow-hidden">
-                  <div className="relative h-64">
-                    <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
-                  </div>
-
-                  <CardContent className="p-6">
-                    <h3 className="text-2xl font-bold mb-2 font-space-grotesk">{member.name}</h3>
-                    <p className="text-green-500 font-medium mb-4">{member.role}</p>
-                    <p className="text-gray-300 mb-4 leading-relaxed">{member.bio}</p>
-
-                    <div className="mb-6">
-                      <p className="text-sm text-gray-400 mb-2">Previously at:</p>
-                      <div className="flex flex-wrap gap-2">
-                        {member.experience.map((company, companyIndex) => (
-                          <span key={companyIndex} className="bg-gray-800 text-gray-300 px-2 py-1 rounded text-sm">
-                            {company}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="flex space-x-4">
-                      <a href={member.social.linkedin} className="text-gray-400 hover:text-green-500 transition-colors">
-                        <Linkedin size={20} />
-                      </a>
-                      <a href={member.social.twitter} className="text-gray-400 hover:text-green-500 transition-colors">
-                        <Twitter size={20} />
-                      </a>
-                      <a
-                        href={`mailto:${member.social.email}`}
-                        className="text-gray-400 hover:text-green-500 transition-colors"
-                      >
-                        <Mail size={20} />
-                      </a>
-                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
