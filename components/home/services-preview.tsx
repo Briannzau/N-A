@@ -12,21 +12,21 @@ const services = [
     title: "Find Product-Market Fit",
     description: "Messaging strategy, persona dev, and early testing loops",
     details: "We identify ICPs, test channels, and refine value props to hit traction faster.",
-    color: "from-green-500/20 to-emerald-500/20",
+    color: "from-green-500/20 to-green-500/20",
   },
   {
     icon: Settings,
     title: "Build the GTM Stack",
     description: "From HubSpot to Segment to Apollo to Notion, we build your stack to match your motion.",
     details: "Includes CRM setup, event-driven workflows, lead routing, and pipeline ops.",
-    color: "from-blue-500/20 to-cyan-500/20",
+    color: "from-green-500/20 to-green-500/20",
   },
   {
     icon: Zap,
     title: "Automate Everything",
     description: "We deploy AI agents to automate sales follow-ups, reporting, and GTM insights",
     details: "So your team scales without headcount.",
-    color: "from-purple-500/20 to-pink-500/20",
+    color: "from-green-500/20 to-green-500/20",
   },
 ]
 
@@ -76,7 +76,7 @@ export default function ServicesPreview() {
                     <h3 className="text-2xl font-bold mb-4 font-space-grotesk">{service.title}</h3>
                   </div>
                   <p className="text-gray-300 mb-4 leading-relaxed">{service.description}</p>
-                  <p className="text-green-400 font-medium mb-6">{service.details}</p>
+                  <p className="text-green-500 font-medium mb-6">{service.details}</p>
 
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}

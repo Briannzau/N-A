@@ -12,11 +12,17 @@ const config: Config = {
     extend: {
       fontFamily: {
         sora: ['Sora', 'system-ui', 'sans-serif'],
+        'space-grotesk': ['Space Grotesk', 'system-ui', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         neon: 'hsl(var(--neon-green))',
+        green: {
+          400: '#22c55e',
+          500: '#22c55e',
+          600: '#16a34a',
+        },
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'

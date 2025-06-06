@@ -33,7 +33,7 @@ export default function FrontierSection() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-neon">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-green-500">
             Built for the Frontier
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -53,8 +53,8 @@ export default function FrontierSection() {
               <Card className="bg-black/50 border-gray-800 card-hover h-full backdrop-blur-sm">
                 <CardContent className="p-8">
                   <div className="mb-6">
-                    <feature.icon className="w-12 h-12 text-[hsl(var(--neon-green))] mb-4" />
-                    <h3 className="text-2xl font-bold mb-4 text-neon">{feature.title}</h3>
+                    <feature.icon className="w-12 h-12 text-green-500 mb-4" />
+                    <h3 className="text-2xl font-bold mb-4 text-green-500">{feature.title}</h3>
                   </div>
                   <p className="text-gray-300 leading-relaxed">{feature.description}</p>
                 </CardContent>

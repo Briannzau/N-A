@@ -37,7 +37,7 @@ export default function CTASection() {
               asChild
               className="border-green-500 text-green-500 hover:bg-green-500 hover:text-black text-lg px-8 py-6 rounded-full transition-all duration-300"
             >
-              <Link href="/portfolio">View Case Studies</Link>
+              <Link href="/services">View Our Services</Link>
             </Button>
           </div>
         </motion.div>

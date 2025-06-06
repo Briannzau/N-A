@@ -53,7 +53,7 @@ export default function Navigation() {
                 >
                   {item.name}
                   {pathname === item.href && (
-                    <motion.div layoutId="activeTab\" className="absolute -bottom-1 left-0 right-0 h-0.5 bg-green-500" />
+                    <motion.div layoutId="activeTab" className="absolute -bottom-1 left-0 right-0 h-0.5 bg-green-500" />
                   )}
                 </Link>
               ))}

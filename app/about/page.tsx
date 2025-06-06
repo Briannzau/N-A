@@ -36,7 +36,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-6xl md:text-7xl font-bold mb-6 font-space-grotesk"
           >
-            About <span className="text-green-500 font-extrabold tracking-wider" style={{ textShadow: '0 0 10px #39FF14, 0 0 20px #39FF14' }}>N/A</span>
+            About <span className="text-green-500">N/A</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -60,7 +60,7 @@ export default function AboutPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-8 font-space-grotesk">
-              Why <span className="text-green-500 font-extrabold tracking-wider" style={{ textShadow: '0 0 10px #39FF14, 0 0 20px #39FF14' }}>N/A</span>?
+              Why <span className="text-green-500">N/A</span>?
             </h2>
           </motion.div>
 
@@ -101,7 +101,7 @@ export default function AboutPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-space-grotesk">
-              Our <span className="text-green-500 font-extrabold tracking-wider" style={{ textShadow: '0 0 10px #39FF14, 0 0 20px #39FF14' }}>Approach</span>
+              Our <span className="text-green-500">Approach</span>
             </h2>
           </motion.div>
 
@@ -137,7 +137,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-5xl md:text-6xl font-bold mb-8 font-space-grotesk"
           >
-            Ready to automate your <span className="text-green-500 font-extrabold tracking-wider" style={{ textShadow: '0 0 10px #39FF14, 0 0 20px #39FF14' }}>GTM</span>?
+            Ready to automate your <span className="text-green-500">GTM</span>?
           </motion.h2>
 
           <motion.div
@@ -149,8 +149,7 @@ export default function AboutPage() {
             <Button
               size="lg"
               asChild
-              className="bg-green-500 hover:bg-green-600 text-black font-semibold px-8 py-6 rounded-full transition-all duration-300 hover:scale-105"
-              style={{ boxShadow: '0 0 20px rgba(57, 255, 20, 0.3)' }}
+              className="bg-green-500 hover:bg-green-600 text-black font-semibold px-8 py-6 rounded-full"
             >
               <Link href="/contact">Let's Talk</Link>
             </Button>

@@ -42,7 +42,7 @@ export default function HeroSection() {
               Go-To-Market
             </motion.span>
             <motion.div
-              className="absolute -bottom-4 left-0 w-full h-2 bg-gradient-to-r from-green-500 to-green-400"
+              className="absolute -bottom-4 left-0 w-full h-2 bg-gradient-to-r from-green-500 to-green-500"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 1.2, delay: 1.2 }}
@@ -58,7 +58,7 @@ export default function HeroSection() {
             }}
             transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
             style={{
-              background: "linear-gradient(90deg, #22c55e, #10b981, #22c55e)",
+              background: "linear-gradient(90deg, #22c55e, #22c55e, #22c55e)",
               backgroundSize: "200% 100%",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
@@ -99,7 +99,7 @@ export default function HeroSection() {
             asChild
             className="border-green-500 text-green-500 hover:bg-green-500 hover:text-black text-lg px-8 py-6 rounded-full transition-transform duration-300"
           >
-            <Link href="/portfolio">View Our Work</Link>
+            <Link href="/services">View Our Services</Link>
           </Button>
         </motion.div>
 
