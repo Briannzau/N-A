@@ -12,11 +12,17 @@ export default function HeroSection() {
   return (
     <motion.section style={{ opacity, scale }} className="min-h-screen flex items-center justify-center px-6 relative">
       <div className="max-w-7xl mx-auto text-center">
+        {/* Replace blur-heavy gradient with optimized version */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 0.5 }}
-          className="absolute inset-0 bg-gradient-to-r from-green-500/10 via-transparent to-green-500/10 blur-3xl"
+          transition={{ duration: 1.5 }}
+          className="absolute inset-0"
+          style={{
+            background: "radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.08), transparent 70%), linear-gradient(60deg, rgba(34, 197, 94, 0.05) 0%, transparent 50%, rgba(34, 197, 94, 0.05) 100%)",
+            transform: "translateZ(0)",
+            willChange: "transform",
+          }}
         />
 
         <motion.h1
@@ -40,6 +46,7 @@ export default function HeroSection() {
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 1.2, delay: 1.2 }}
+              style={{ transformOrigin: "left" }}
             />
           </span>{" "}
           <br />
@@ -55,6 +62,8 @@ export default function HeroSection() {
               backgroundSize: "200% 100%",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
+              transform: "translateZ(0)",
+              willChange: "background-position",
             }}
           >
             Scale
@@ -67,8 +76,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-12 max-w-5xl mx-auto leading-relaxed font-inter"
         >
-          From product-market fit to automated outbound, N/A helps startups and SMBs scale faster with AI-powered GTM
-          strategies and stack execution.
+          N/A helps startups and SMBs scale faster with AI-driven GTM strategies and stack execution.
         </motion.p>
 
         <motion.div
@@ -80,7 +88,7 @@ export default function HeroSection() {
           <Button
             size="lg"
             asChild
-            className="bg-green-500 hover:bg-green-600 text-black text-lg px-8 py-6 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25 hover:scale-105"
+            className="bg-green-500 hover:bg-green-600 text-black text-lg px-8 py-6 rounded-full transition-transform duration-300 hover:scale-105"
           >
             <Link href="/contact">Get a Free GTM Audit</Link>
           </Button>
@@ -89,7 +97,7 @@ export default function HeroSection() {
             size="lg"
             variant="outline"
             asChild
-            className="border-green-500 text-green-500 hover:bg-green-500 hover:text-black text-lg px-8 py-6 rounded-full transition-all duration-300"
+            className="border-green-500 text-green-500 hover:bg-green-500 hover:text-black text-lg px-8 py-6 rounded-full transition-transform duration-300"
           >
             <Link href="/portfolio">View Our Work</Link>
           </Button>
