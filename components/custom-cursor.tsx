@@ -1,17 +1,20 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useMotionValue } from "framer-motion"
 import { useState, useEffect } from "react"
+import { useThrottledCallback } from "@/hooks/use-throttle"
 
 export default function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+
+  const updateMousePosition = useThrottledCallback((e: MouseEvent) => {
+    mouseX.set(e.clientX)
+    mouseY.set(e.clientY)
+  }, 16)
 
   useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
-
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement
       const isInteractive =
@@ -23,60 +26,51 @@ export default function CustomCursor() {
       setIsHovering(!!isInteractive)
     }
 
-    window.addEventListener("mousemove", updateMousePosition)
+    document.addEventListener("mousemove", updateMousePosition)
     document.addEventListener("mouseover", handleMouseOver)
 
     return () => {
-      window.removeEventListener("mousemove", updateMousePosition)
+      document.removeEventListener("mousemove", updateMousePosition)
       document.removeEventListener("mouseover", handleMouseOver)
     }
-  }, [])
+  }, [updateMousePosition])
+
+  // Hide cursor on mobile/touch devices
+  if (typeof window !== "undefined" && "ontouchstart" in window) {
+    return null
+  }
 
   return (
     <>
-      {/* Main cursor dot */}
       <motion.div
         className="fixed w-2 h-2 bg-green-500 rounded-full pointer-events-none z-50 mix-blend-difference"
-        animate={{
-          x: mousePosition.x - 4,
-          y: mousePosition.y - 4,
+        style={{
+          x: mouseX,
+          y: mouseY,
+          translateX: -4,
+          translateY: -4,
           scale: isHovering ? 1.5 : 1,
         }}
         transition={{
           type: "spring",
-          stiffness: 500,
           damping: 28,
+          stiffness: 500,
         }}
       />
 
-      {/* Outer ring */}
       <motion.div
         className="fixed w-8 h-8 border border-green-500/50 rounded-full pointer-events-none z-50"
-        animate={{
-          x: mousePosition.x - 16,
-          y: mousePosition.y - 16,
+        style={{
+          x: mouseX,
+          y: mouseY,
+          translateX: -16,
+          translateY: -16,
           scale: isHovering ? 1.5 : 1,
         }}
         transition={{
           type: "spring",
-          stiffness: 150,
           damping: 15,
-        }}
-      />
-
-      {/* Hover effect ring */}
-      <motion.div
-        className="fixed w-12 h-12 border border-green-500/20 rounded-full pointer-events-none z-50"
-        animate={{
-          x: mousePosition.x - 24,
-          y: mousePosition.y - 24,
-          scale: isHovering ? 2 : 0,
-          opacity: isHovering ? 1 : 0,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 200,
-          damping: 20,
+          stiffness: 150,
         }}
       />
     </>

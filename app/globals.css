@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Base theme colors and variables */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -30,7 +41,6 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
-
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -63,35 +73,26 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
-    cursor: none;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  }
-
-  .font-space-grotesk {
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  }
-
-  .font-inter {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
 }
 
-html {
-  scroll-behavior: smooth;
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-* {
-  cursor: none !important;
-}
-
-/* Custom scrollbar */
+/* Performance optimized scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -100,46 +101,59 @@ html {
 
 ::-webkit-scrollbar-thumb {
   background: #22c55e;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #16a34a;
+  border-radius: 3px;
 }
 
 /* Selection styles */
 ::selection {
-  background: #22c55e;
-  color: #000;
+  @apply bg-green-500/30 text-white;
 }
 
-/* Smooth transitions for all interactive elements */
-button,
-a,
-[role="button"] {
-  transition: all 0.2s ease-in-out;
+/* Optimized transitions */
+.animate-in {
+  animation: fade-in 0.3s ease-out;
+  will-change: transform, opacity;
 }
 
-/* Focus styles for accessibility */
-button:focus-visible,
-a:focus-visible,
-[role="button"]:focus-visible {
-  outline: 2px solid #22c55e;
-  outline-offset: 2px;
+.animate-out {
+  animation: fade-out 0.2s ease-in;
+  will-change: transform, opacity;
 }
 
-/* Gradient text animation */
-@keyframes gradient-x {
-  0%,
-  100% {
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* Optimized gradient animation */
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 8s linear infinite;
+  will-change: background-position;
+}
+
+@keyframes gradient {
+  0% {
     background-position: 0% 50%;
   }
-  50% {
-    background-position: 100% 50%;
+  100% {
+    background-position: 200% 50%;
   }
-}
-
-.animate-gradient-x {
-  animation: gradient-x 3s ease infinite;
-  background-size: 200% 200%;
 }
