@@ -7,8 +7,8 @@ import Link from "next/link"
 
 const values = [
   {
-    title: "Operator-First",
-    description: "We're not consultants—we're operators who've built and scaled GTM systems ourselves.",
+    title: "AI-First Approach",
+    description: "We deploy cutting-edge AI agents and automation to eliminate manual GTM bottlenecks.",
   },
   {
     title: "Results-Driven",
@@ -19,8 +19,8 @@ const values = [
     description: "We leverage the latest AI and automation tools to give our clients unfair advantages.",
   },
   {
-    title: "Partnership Mindset",
-    description: "We become an extension of your team, not just another vendor.",
+    title: "Systems Mindset",
+    description: "We build scalable GTM systems, not one-off campaigns or manual processes.",
   },
 ]
 
@@ -36,7 +36,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-6xl md:text-7xl font-bold mb-6 font-space-grotesk"
           >
-            About <span className="text-green-500">N/A</span>
+            About <span className="text-green-500 font-extrabold tracking-wider" style={{ textShadow: '0 0 10px #39FF14, 0 0 20px #39FF14' }}>N/A</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -44,8 +44,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed"
           >
-            We're GTM operators who've been in your shoes. We've built, scaled, and optimized go-to-market systems at
-            some of the fastest-growing companies in tech. Now we're here to help you do the same.
+            We engineer AI-powered GTM systems that scale faster than traditional approaches. Through intelligent automation and cutting-edge tools, we eliminate manual bottlenecks and accelerate revenue growth for frontier companies.
           </motion.p>
         </div>
       </section>
@@ -61,7 +60,7 @@ export default function AboutPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-8 font-space-grotesk">
-              Why <span className="text-green-500">N/A</span>?
+              Why <span className="text-green-500 font-extrabold tracking-wider" style={{ textShadow: '0 0 10px #39FF14, 0 0 20px #39FF14' }}>N/A</span>?
             </h2>
           </motion.div>
 
@@ -77,16 +76,13 @@ export default function AboutPage() {
               </h3>
               <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
                 <p>
-                  Traditional GTM advice doesn't apply to modern businesses. Cookie-cutter strategies, outdated
-                  playbooks, and one-size-fits-all solutions? Not applicable.
+                  Traditional GTM advice doesn't apply to modern AI-native businesses. Manual processes, outdated playbooks, and human-dependent workflows? Not applicable.
                 </p>
                 <p>
-                  We believe every company needs a custom-engineered GTM system that fits their unique market, product,
-                  and growth stage. That's why we don't use templates—we build from scratch.
+                  We leverage advanced AI agents, intelligent automation, and modern GTM stacks to build systems that operate 24/7. Our approach combines machine learning, predictive analytics, and automated workflows to accelerate every stage of your go-to-market engine.
                 </p>
                 <p>
-                  Our team has been on the front lines of GTM at companies like Vercel, Netlify, and JumpCrew. We know
-                  what works because we've done it ourselves.
+                  From AI-powered lead qualification and automated outbound sequences to intelligent pipeline management and predictive revenue forecasting—we deploy technology that scales beyond human limitations.
                 </p>
               </div>
             </motion.div>
@@ -101,20 +97,20 @@ export default function AboutPage() {
               <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-2xl p-8 backdrop-blur-sm border border-green-500/20">
                 <div className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-400">Companies Scaled</span>
-                    <span className="text-3xl font-bold text-green-500">50+</span>
+                    <span className="text-gray-400">AI Agents Deployed</span>
+                    <span className="text-3xl font-bold text-green-500">500+</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-400">Combined ARR Generated</span>
-                    <span className="text-3xl font-bold text-green-500">$500M+</span>
+                    <span className="text-gray-400">Automation Workflows</span>
+                    <span className="text-3xl font-bold text-green-500">1,200+</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-400">Average Growth Rate</span>
-                    <span className="text-3xl font-bold text-green-500">300%</span>
+                    <span className="text-gray-400">Manual Tasks Eliminated</span>
+                    <span className="text-3xl font-bold text-green-500">85%</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-400">Client Satisfaction</span>
-                    <span className="text-3xl font-bold text-green-500">100%</span>
+                    <span className="text-gray-400">GTM Velocity Increase</span>
+                    <span className="text-3xl font-bold text-green-500">400%</span>
                   </div>
                 </div>
               </div>
@@ -134,7 +130,7 @@ export default function AboutPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-space-grotesk">
-              Our <span className="text-green-500">Values</span>
+              Our <span className="text-green-500 font-extrabold tracking-wider" style={{ textShadow: '0 0 10px #39FF14, 0 0 20px #39FF14' }}>Approach</span>
             </h2>
           </motion.div>
 
@@ -146,7 +142,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -5, scale: 1.02 }}
               >
                 <Card className="bg-gray-900/50 border-gray-800 hover:border-green-500/50 transition-all duration-300 h-full">
                   <CardContent className="p-6 text-center">
@@ -170,7 +166,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-5xl md:text-6xl font-bold mb-8 font-space-grotesk"
           >
-            Ready to work with <span className="text-green-500">operators</span>?
+            Ready to automate your <span className="text-green-500 font-extrabold tracking-wider" style={{ textShadow: '0 0 10px #39FF14, 0 0 20px #39FF14' }}>GTM</span>?
           </motion.h2>
 
           <motion.div
@@ -182,7 +178,8 @@ export default function AboutPage() {
             <Button
               size="lg"
               asChild
-              className="bg-green-500 hover:bg-green-600 text-black font-semibold px-8 py-6 rounded-full"
+              className="bg-green-500 hover:bg-green-600 text-black font-semibold px-8 py-6 rounded-full transition-all duration-300 hover:scale-105"
+              style={{ boxShadow: '0 0 20px rgba(57, 255, 20, 0.3)' }}
             >
               <Link href="/contact">Let's Talk</Link>
             </Button>
