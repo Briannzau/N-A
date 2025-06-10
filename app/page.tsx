@@ -61,24 +61,6 @@ const services = [
   },
 ]
 
-const testimonials = [
-  {
-    name: 'Sarah Chen',
-    title: 'CEO, TechFlow',
-    quote: 'N/A transformed our GTM process. 300% increase in qualified leads within 3 months.',
-  },
-  {
-    name: 'Marcus Rodriguez',
-    title: 'VP Growth, DataSync',
-    quote: 'The AI workflows they built saved us 20 hours per week on manual outreach.',
-  },
-  {
-    name: 'Emily Watson',
-    title: 'Founder, CloudScale',
-    quote: 'ROI was immediate. Our conversion rates doubled with their automation.',
-  },
-]
-
 export default function HomePage() {
   const [heroRef, heroInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [processRef, processInView] = useInView({ threshold: 0.1, triggerOnce: true })
@@ -216,35 +198,6 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-light-section to-white dark:from-dark-section dark:to-dark-bg">
-        <div className="max-w-content mx-auto px-gutter">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold mb-6">What Our Clients Say</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-white dark:bg-dark-bg p-6 rounded-lg shadow-lg card-hover"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-neon-primary to-neon-secondary rounded-full flex items-center justify-center mr-3">
-                    <span className="text-white font-bold text-sm">{testimonial.name[0]}</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-sm">{testimonial.name}</h4>
-                    <p className="text-xs text-gray-600 dark:text-gray-400">{testimonial.title}</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 italic text-sm">&quot;{testimonial.quote}&quot;</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
