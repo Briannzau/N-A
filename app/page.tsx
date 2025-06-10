@@ -129,19 +129,22 @@ export default function HomePage() {
   }
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden relative">
       {/* Hero Section with tsParticles */}
       <HeroSection />
 
-      {/* Process Section - Reduced padding */}
+      {/* Process Section - Glass background */}
       <section 
         ref={processRef}
-        className="py-12 md:py-16 bg-light-section dark:bg-dark-section"
+        className="py-12 md:py-16 relative"
       >
-        <div className="max-w-content mx-auto px-gutter">
+        {/* Glass background overlay */}
+        <div className="absolute inset-0 bg-white/10 dark:bg-black/20 backdrop-blur-md border-y border-white/20 dark:border-gray-700/30"></div>
+        
+        <div className="max-w-content mx-auto px-gutter relative z-10">
           <div className={`section-animate ${processInView ? 'in-view' : ''} text-center mb-8`}>
-            <h2 className="text-2xl md:text-4xl font-bold mb-4">Our 4-Step Process</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Our 4-Step Process</h2>
+            <p className="text-lg text-gray-200 max-w-2xl mx-auto">
               From discovery to optimization, we guide you through every step of your AI-powered GTM transformation.
             </p>
           </div>
@@ -150,26 +153,29 @@ export default function HomePage() {
             {processSteps.map((step, index) => (
               <div
                 key={index}
-                className={`section-animate ${processInView ? 'in-view' : ''} card-hover bg-white dark:bg-dark-bg p-6 rounded-lg shadow-lg`}
+                className={`section-animate ${processInView ? 'in-view' : ''} card-hover bg-white/10 dark:bg-black/20 backdrop-blur-sm p-6 rounded-lg border border-white/20 dark:border-gray-700/30 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-300`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-12 h-12 bg-neon-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <step.icon className="h-6 w-6 text-neon-primary" />
+                <div className="w-12 h-12 bg-[#00FFDD]/20 rounded-lg flex items-center justify-center mb-4">
+                  <step.icon className="h-6 w-6 text-[#00FFDD]" />
                 </div>
-                <h3 className="text-lg font-semibold mb-3">{step.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">{step.description}</p>
+                <h3 className="text-lg font-semibold mb-3 text-white">{step.title}</h3>
+                <p className="text-gray-200 text-sm">{step.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Services Section - Reduced padding */}
-      <section ref={servicesRef} className="py-12 md:py-16">
-        <div className="max-w-content mx-auto px-gutter">
+      {/* Services Section - Glass background */}
+      <section ref={servicesRef} className="py-12 md:py-16 relative">
+        {/* Glass background overlay */}
+        <div className="absolute inset-0 bg-black/10 dark:bg-white/5 backdrop-blur-md border-y border-white/10 dark:border-gray-700/20"></div>
+        
+        <div className="max-w-content mx-auto px-gutter relative z-10">
           <div className={`section-animate ${servicesInView ? 'in-view' : ''} text-center mb-8`}>
-            <h2 className="text-2xl md:text-4xl font-bold mb-4">Tailored AI-Powered Services</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Tailored AI-Powered Services</h2>
+            <p className="text-lg text-gray-200 max-w-2xl mx-auto">
               Comprehensive solutions designed to accelerate your go-to-market success.
             </p>
           </div>
@@ -178,17 +184,17 @@ export default function HomePage() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`section-animate ${servicesInView ? 'in-view' : ''} card-hover bg-white dark:bg-dark-bg p-6 rounded-lg shadow-lg border border-transparent hover:border-neon-primary/30`}
+                className={`section-animate ${servicesInView ? 'in-view' : ''} card-hover bg-white/10 dark:bg-black/20 backdrop-blur-sm p-6 rounded-lg border border-white/20 dark:border-gray-700/30 hover:bg-white/20 dark:hover:bg-black/30 hover:border-[#00FFDD]/50 transition-all duration-300`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-12 h-12 bg-neon-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <service.icon className="h-6 w-6 text-neon-primary" />
+                <div className="w-12 h-12 bg-[#00FFDD]/20 rounded-lg flex items-center justify-center mb-4">
+                  <service.icon className="h-6 w-6 text-[#00FFDD]" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">{service.description}</p>
+                <h3 className="text-xl font-semibold mb-3 text-white">{service.title}</h3>
+                <p className="text-gray-200 mb-4">{service.description}</p>
                 <Link 
                   href="/services"
-                  className="text-neon-primary font-medium hover:underline"
+                  className="text-[#00FFDD] font-medium hover:underline"
                 >
                   Learn More →
                 </Link>
@@ -198,22 +204,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Partner with Us - Reduced padding */}
+      {/* Why Partner with Us - Glass background */}
       <section 
         ref={aboutRef}
-        className="py-16 md:py-20 bg-light-section dark:bg-dark-section relative"
+        className="py-16 md:py-20 relative"
       >
-        <div className="max-w-content mx-auto px-gutter">
+        {/* Glass background overlay */}
+        <div className="absolute inset-0 bg-white/10 dark:bg-black/20 backdrop-blur-md border-y border-white/20 dark:border-gray-700/30"></div>
+        
+        <div className="max-w-content mx-auto px-gutter relative z-10">
           <div className={`section-animate ${aboutInView ? 'in-view' : ''} text-center mb-12`}>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Why Partner with Us?</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Why Partner with Us?</h2>
+            <p className="text-lg text-gray-200 max-w-3xl mx-auto">
               Discover the advantages that set us apart in the AI-powered GTM space.
             </p>
           </div>
 
           {/* Redesigned Carousel Container */}
           <div className="relative max-w-6xl mx-auto">
-            {/* Main Content Area - Reduced height */}
+            {/* Main Content Area */}
             <div className="relative min-h-[400px] md:min-h-[350px]">
               {partnershipReasons.map((reason, index) => (
                 <div
@@ -226,20 +235,20 @@ export default function HomePage() {
                         : 'opacity-0 transform translate-x-full'
                   }`}
                 >
-                  <div className="bg-white dark:bg-dark-bg rounded-2xl p-6 md:p-8 shadow-xl border border-gray-200 dark:border-gray-700">
+                  <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 dark:border-gray-700/30">
                     {/* Header */}
                     <div className="flex items-center mb-6">
-                      <div className="w-16 h-16 bg-neon-primary/10 rounded-2xl flex items-center justify-center mr-6">
-                        <reason.icon className="h-8 w-8 text-neon-primary" />
+                      <div className="w-16 h-16 bg-[#00FFDD]/20 rounded-2xl flex items-center justify-center mr-6">
+                        <reason.icon className="h-8 w-8 text-[#00FFDD]" />
                       </div>
                       <div>
-                        <div className="text-sm font-medium text-neon-primary mb-1">{reason.highlight}</div>
-                        <h3 className="text-2xl md:text-3xl font-bold text-light-text dark:text-dark-text">{reason.title}</h3>
+                        <div className="text-sm font-medium text-[#00FFDD] mb-1">{reason.highlight}</div>
+                        <h3 className="text-2xl md:text-3xl font-bold text-white">{reason.title}</h3>
                       </div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
                       {reason.description}
                     </p>
                   </div>
@@ -252,10 +261,10 @@ export default function HomePage() {
               {/* Previous Button */}
               <button
                 onClick={prevSlide}
-                className="flex items-center justify-center w-12 h-12 bg-white dark:bg-dark-bg rounded-full shadow-lg border border-gray-200 dark:border-gray-700 hover:border-neon-primary transition-all duration-200 group"
+                className="flex items-center justify-center w-12 h-12 bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-full border border-white/20 dark:border-gray-700/30 hover:border-[#00FFDD] transition-all duration-200 group"
                 aria-label="Previous slide"
               >
-                <ArrowLeftIcon className="h-5 w-5 text-gray-600 dark:text-gray-400 group-hover:text-neon-primary" />
+                <ArrowLeftIcon className="h-5 w-5 text-gray-200 group-hover:text-[#00FFDD]" />
               </button>
 
               {/* Slide Indicators */}
@@ -266,8 +275,8 @@ export default function HomePage() {
                     onClick={() => goToSlide(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-200 ${
                       index === currentSlide 
-                        ? 'bg-neon-primary scale-125' 
-                        : 'bg-gray-300 dark:bg-gray-600 hover:bg-neon-primary/50'
+                        ? 'bg-[#00FFDD] scale-125' 
+                        : 'bg-white/30 hover:bg-[#00FFDD]/50'
                     }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
@@ -277,17 +286,17 @@ export default function HomePage() {
               {/* Next Button */}
               <button
                 onClick={nextSlide}
-                className="flex items-center justify-center w-12 h-12 bg-white dark:bg-dark-bg rounded-full shadow-lg border border-gray-200 dark:border-gray-700 hover:border-neon-primary transition-all duration-200 group"
+                className="flex items-center justify-center w-12 h-12 bg-white/10 dark:bg-black/20 backdrop-blur-sm rounded-full border border-white/20 dark:border-gray-700/30 hover:border-[#00FFDD] transition-all duration-200 group"
                 aria-label="Next slide"
               >
-                <ArrowRightIcon className="h-5 w-5 text-gray-600 dark:text-gray-400 group-hover:text-neon-primary" />
+                <ArrowRightIcon className="h-5 w-5 text-gray-200 group-hover:text-[#00FFDD]" />
               </button>
             </div>
 
             {/* Progress Bar */}
-            <div className="mt-4 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+            <div className="mt-4 h-1 bg-white/20 rounded-full overflow-hidden">
               <div 
-                className="h-full bg-neon-primary transition-all duration-300 ease-out"
+                className="h-full bg-[#00FFDD] transition-all duration-300 ease-out"
                 style={{ 
                   width: `${((currentSlide + 1) / partnershipReasons.length) * 100}%`
                 }}
@@ -298,7 +307,7 @@ export default function HomePage() {
             <div className="text-center mt-4">
               <button
                 onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-                className="text-sm text-gray-500 dark:text-gray-400 hover:text-neon-primary transition-colors duration-200"
+                className="text-sm text-gray-300 hover:text-[#00FFDD] transition-colors duration-200"
               >
                 {isAutoPlaying ? 'Pause Auto-play' : 'Resume Auto-play'}
               </button>
@@ -307,42 +316,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact Section - Reduced padding */}
-      <section className="py-12 md:py-16">
-        <div className="max-w-content mx-auto px-gutter">
+      {/* Contact Section - Glass background */}
+      <section className="py-12 md:py-16 relative">
+        {/* Glass background overlay */}
+        <div className="absolute inset-0 bg-black/10 dark:bg-white/5 backdrop-blur-md border-y border-white/10 dark:border-gray-700/20"></div>
+        
+        <div className="max-w-content mx-auto px-gutter relative z-10">
           <div className="text-center">
-            <h2 className="text-2xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">
               Schedule your free 30-minute strategy call
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-3xl mx-auto">
+            <p className="text-gray-200 mb-6 max-w-3xl mx-auto">
               We&apos;ll audit your GTM strategy and explore AI workflow opportunities. No sales pitch—just 
               actionable insights you can implement immediately.
             </p>
             
-            <div className="bg-white dark:bg-dark-bg p-6 rounded-lg shadow-lg max-w-2xl mx-auto mb-6">
+            <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-6 rounded-lg border border-white/20 dark:border-gray-700/30 max-w-2xl mx-auto mb-6">
               <div className="text-center">
-                <ClockIcon className="h-12 w-12 text-neon-primary mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">30-Minute Strategy Call</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                <ClockIcon className="h-12 w-12 text-[#00FFDD] mx-auto mb-4" />
+                <h3 className="text-xl font-bold mb-3 text-white">30-Minute Strategy Call</h3>
+                <p className="text-gray-200 mb-4">
                   Free GTM audit and AI automation consultation
                 </p>
                 
                 <div className="space-y-2 mb-6">
                   <div className="flex items-center justify-center">
-                    <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
-                    <span className="text-sm">30-minute discovery call</span>
+                    <div className="w-2 h-2 bg-[#00FFDD] rounded-full mr-3"></div>
+                    <span className="text-sm text-gray-200">30-minute discovery call</span>
                   </div>
                   <div className="flex items-center justify-center">
-                    <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
-                    <span className="text-sm">GTM strategy audit</span>
+                    <div className="w-2 h-2 bg-[#00FFDD] rounded-full mr-3"></div>
+                    <span className="text-sm text-gray-200">GTM strategy audit</span>
                   </div>
                   <div className="flex items-center justify-center">
-                    <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
-                    <span className="text-sm">AI automation opportunities</span>
+                    <div className="w-2 h-2 bg-[#00FFDD] rounded-full mr-3"></div>
+                    <span className="text-sm text-gray-200">AI automation opportunities</span>
                   </div>
                   <div className="flex items-center justify-center">
-                    <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
-                    <span className="text-sm">Custom roadmap & recommendations</span>
+                    <div className="w-2 h-2 bg-[#00FFDD] rounded-full mr-3"></div>
+                    <span className="text-sm text-gray-200">Custom roadmap & recommendations</span>
                   </div>
                 </div>
                 
@@ -350,7 +362,7 @@ export default function HomePage() {
                   href="https://calendly.com/briannzau/n-a-intro-call"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary inline-block w-full text-center"
+                  className="inline-block w-full text-center px-8 py-4 bg-[#00FFDD] text-[#0a0c1c] font-semibold rounded-lg transition-all duration-300 hover:bg-[#00D4AA] hover:shadow-[0_0_30px_rgba(0,255,221,0.3)] hover:scale-105 transform"
                 >
                   Schedule Your Call
                 </a>
