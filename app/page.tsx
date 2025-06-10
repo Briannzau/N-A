@@ -1,8 +1,7 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import Link from 'next/link'
 import { useInView } from 'react-intersection-observer'
+import Link from 'next/link'
 import ParticleBackground from './components/ParticleBackground'
 import ContactForm from './components/ContactForm'
 import { 
@@ -67,19 +66,16 @@ const testimonials = [
     name: 'Sarah Chen',
     title: 'CEO, TechFlow',
     quote: 'N/A transformed our GTM process. 300% increase in qualified leads within 3 months.',
-    image: '/testimonial-1.jpg',
   },
   {
     name: 'Marcus Rodriguez',
     title: 'VP Growth, DataSync',
     quote: 'The AI workflows they built saved us 20 hours per week on manual outreach.',
-    image: '/testimonial-2.jpg',
   },
   {
     name: 'Emily Watson',
     title: 'Founder, CloudScale',
     quote: 'ROI was immediate. Our conversion rates doubled with their automation.',
-    image: '/testimonial-3.jpg',
   },
 ]
 
@@ -99,9 +95,9 @@ export default function HomePage() {
         <ParticleBackground />
         <div className="relative z-10 max-w-content mx-auto px-gutter text-center">
           <div className={`section-animate ${heroInView ? 'in-view' : ''}`}>
-            <h1 className="text-hero md:text-hero-md lg:text-hero-lg font-bold mb-6 leading-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               <span className="text-neon-primary">AI-Powered</span> Go-To-Market<br />
-              Strategies for Tomorrow's Startups
+              Strategies for Tomorrow&apos;s Startups
             </h1>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
               We consult, design, and implement seamless AI workflows that turn ideas into scalable growth.
@@ -119,7 +115,7 @@ export default function HomePage() {
       {/* Process Section */}
       <section 
         ref={processRef}
-        className="py-section md:py-20 bg-light-section dark:bg-dark-section"
+        className="py-16 md:py-20 bg-light-section dark:bg-dark-section"
       >
         <div className="max-w-content mx-auto px-gutter">
           <div className={`section-animate ${processInView ? 'in-view' : ''} text-center mb-12`}>
@@ -148,7 +144,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section ref={servicesRef} className="py-section md:py-20">
+      <section ref={servicesRef} className="py-16 md:py-20">
         <div className="max-w-content mx-auto px-gutter">
           <div className={`section-animate ${servicesInView ? 'in-view' : ''} text-center mb-12`}>
             <h2 className="text-2xl md:text-4xl font-bold mb-6">Tailored AI-Powered Services</h2>
@@ -184,7 +180,7 @@ export default function HomePage() {
       {/* About Section */}
       <section 
         ref={aboutRef}
-        className="py-section md:py-20 bg-light-section dark:bg-dark-section"
+        className="py-16 md:py-20 bg-light-section dark:bg-dark-section"
       >
         <div className="max-w-content mx-auto px-gutter">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
@@ -192,7 +188,7 @@ export default function HomePage() {
               <h2 className="text-2xl md:text-4xl font-bold mb-6">Why Partner with Us?</h2>
               <div className="space-y-4 text-gray-600 dark:text-gray-400">
                 <p>
-                  Our team combines deep GTM expertise with cutting-edge AI automation. We're not just consultants—we're 
+                  Our team combines deep GTM expertise with cutting-edge AI automation. We&apos;re not just consultants—we&apos;re 
                   operators who have scaled startups from zero to millions in ARR.
                 </p>
                 <p>
@@ -225,7 +221,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-section md:py-20 bg-gradient-to-r from-light-section to-white dark:from-dark-section dark:to-dark-bg">
+      <section className="py-16 md:py-20 bg-gradient-to-r from-light-section to-white dark:from-dark-section dark:to-dark-bg">
         <div className="max-w-content mx-auto px-gutter">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-bold mb-6">What Our Clients Say</h2>
@@ -246,7 +242,7 @@ export default function HomePage() {
                     <p className="text-xs text-gray-600 dark:text-gray-400">{testimonial.title}</p>
                   </div>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 italic text-sm">"{testimonial.quote}"</p>
+                <p className="text-gray-600 dark:text-gray-400 italic text-sm">&quot;{testimonial.quote}&quot;</p>
               </div>
             ))}
           </div>
@@ -254,7 +250,7 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-section md:py-20">
+      <section className="py-16 md:py-20">
         <div className="max-w-content mx-auto px-gutter">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div>
@@ -262,7 +258,7 @@ export default function HomePage() {
                 Schedule your free 30-minute strategy call
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-6">
-                We'll audit your GTM strategy and explore AI workflow opportunities. No sales pitch—just 
+                We&apos;ll audit your GTM strategy and explore AI workflow opportunities. No sales pitch—just 
                 actionable insights you can implement immediately.
               </p>
               <div className="space-y-3">

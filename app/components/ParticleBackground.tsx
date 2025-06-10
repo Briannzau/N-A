@@ -29,8 +29,8 @@ export default function ParticleBackground() {
       opacity: number
     }> = []
 
-    // Create particles
-    for (let i = 0; i < 50; i++) {
+    // Create fewer particles for better performance
+    for (let i = 0; i < 30; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -41,10 +41,12 @@ export default function ParticleBackground() {
       })
     }
 
+    let animationId: number
+
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      particles.forEach((particle, index) => {
+      particles.forEach((particle) => {
         // Update position
         particle.x += particle.vx
         particle.y += particle.vy
@@ -58,32 +60,18 @@ export default function ParticleBackground() {
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
         ctx.fillStyle = `rgba(0, 255, 221, ${particle.opacity})`
         ctx.fill()
-
-        // Draw connections
-        particles.forEach((otherParticle, otherIndex) => {
-          if (index !== otherIndex) {
-            const dx = particle.x - otherParticle.x
-            const dy = particle.y - otherParticle.y
-            const distance = Math.sqrt(dx * dx + dy * dy)
-
-            if (distance < 100) {
-              ctx.beginPath()
-              ctx.moveTo(particle.x, particle.y)
-              ctx.lineTo(otherParticle.x, otherParticle.y)
-              ctx.strokeStyle = `rgba(0, 255, 221, ${0.1 * (1 - distance / 100)})`
-              ctx.stroke()
-            }
-          }
-        })
       })
 
-      requestAnimationFrame(animate)
+      animationId = requestAnimationFrame(animate)
     }
 
     animate()
 
     return () => {
       window.removeEventListener('resize', resizeCanvas)
+      if (animationId) {
+        cancelAnimationFrame(animationId)
+      }
     }
   }, [])
 
