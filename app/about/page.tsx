@@ -29,6 +29,7 @@ const values = [
 export default function AboutPage() {
   const [heroRef, heroInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [valuesRef, valuesInView] = useInView({ threshold: 0.1, triggerOnce: true })
+  const [storyRef, storyInView] = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
     <div className="pt-16">
@@ -76,47 +77,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="py-section md:py-section bg-light-section dark:bg-dark-section">
+      {/* Our Story - Centered */}
+      <section ref={storyRef} className="py-section md:py-section bg-light-section dark:bg-dark-section">
         <div className="max-w-content mx-auto px-gutter">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">Our Story</h2>
-              <div className="space-y-6 text-lg text-gray-600 dark:text-gray-400">
-                <p>
-                  N/A was born from frustration. As GTM operators at high-growth startups, we kept seeing the same 
-                  problems: manual processes that don't scale, disconnected tools, and strategies that worked five 
-                  years ago but fail today.
-                </p>
-                <p>
-                  We realized that traditional GTM playbooks are simply not applicable (N/A) in an AI-first world. 
-                  Companies need systems that can operate 24/7, learn from data, and adapt in real-time.
-                </p>
-                <p>
-                  So we built N/A to bridge the gap between cutting-edge AI technology and proven GTM strategies. 
-                  We're not just consultants—we're operators who have been in your shoes and know what it takes to scale.
-                </p>
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-neon-primary/20 to-neon-secondary/20 p-8 rounded-lg">
-              <div className="grid grid-cols-2 gap-6 text-center">
-                <div>
-                  <div className="text-3xl font-bold text-neon-primary mb-2">50+</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Companies Scaled</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-neon-primary mb-2">$500M+</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Revenue Generated</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-neon-primary mb-2">300%</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Avg Growth Increase</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-neon-primary mb-2">24/7</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">AI Systems Running</div>
-                </div>
-              </div>
+          <div className={`section-animate ${storyInView ? 'in-view' : ''} text-center`}>
+            <h2 className="text-3xl md:text-5xl font-bold mb-8">Our Story</h2>
+            <div className="max-w-4xl mx-auto space-y-6 text-lg text-gray-600 dark:text-gray-400">
+              <p>
+                N/A was born from frustration. As GTM operators at high-growth startups, we kept seeing the same 
+                problems: manual processes that don't scale, disconnected tools, and strategies that worked five 
+                years ago but fail today.
+              </p>
+              <p>
+                We realized that traditional GTM playbooks are simply not applicable (N/A) in an AI-first world. 
+                Companies need systems that can operate 24/7, learn from data, and adapt in real-time.
+              </p>
+              <p>
+                So we built N/A to bridge the gap between cutting-edge AI technology and proven GTM strategies. 
+                We're not just consultants—we're operators who have been in your shoes and know what it takes to scale.
+              </p>
             </div>
           </div>
         </div>
