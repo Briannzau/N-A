@@ -4,7 +4,11 @@ import { useInView } from 'react-intersection-observer'
 import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import { 
-  ClockIcon
+  ClockIcon,
+  CheckCircleIcon,
+  UserGroupIcon,
+  ChartBarIcon,
+  LightBulbIcon
 } from '@heroicons/react/24/outline'
 
 // Dynamic import to avoid SSR issues
@@ -49,7 +53,7 @@ export default function ContactPage() {
           <div className="absolute inset-0 bg-black/10 dark:bg-white/5 backdrop-blur-md border-y border-white/10 dark:border-gray-700/20"></div>
           
           <div className="max-w-content mx-auto px-gutter relative z-10">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-6xl mx-auto">
               <div className={`section-animate ${formInView ? 'in-view' : ''} text-center mb-12`}>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Book Your Strategy Call</h2>
                 <p className="text-lg text-gray-300 mb-8">
@@ -57,70 +61,136 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                {/* Calendar Booking */}
+              {/* Main CTA Section */}
+              <div className={`section-animate ${formInView ? 'in-view' : ''} mb-16`}>
+                <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-8 rounded-lg border border-white/20 dark:border-gray-700/30 max-w-2xl mx-auto">
+                  <div className="text-center">
+                    <ClockIcon className="h-16 w-16 text-[#00FFDD] mx-auto mb-6" />
+                    <h3 className="text-2xl font-bold mb-4 text-white">30-Minute Strategy Call</h3>
+                    <p className="text-gray-300 mb-6">
+                      Free GTM audit and AI automation consultation
+                    </p>
+                    <a
+                      href="https://calendly.com/briannzau/n-a-intro-call"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block w-full text-center px-8 py-4 bg-[#00FFDD] text-[#0a0c1c] font-semibold rounded-lg transition-all duration-300 hover:bg-[#00D4AA] hover:shadow-[0_0_30px_rgba(0,255,221,0.3)] hover:scale-105 transform"
+                    >
+                      Schedule Your Call
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* 4-Column Grid Layout */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* What to Expect */}
                 <div className={`section-animate ${formInView ? 'in-view' : ''}`}>
-                  <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-8 rounded-lg border border-white/20 dark:border-gray-700/30">
-                    <div className="text-center">
-                      <ClockIcon className="h-16 w-16 text-[#00FFDD] mx-auto mb-6" />
-                      <h3 className="text-2xl font-bold mb-4 text-white">30-Minute Strategy Call</h3>
-                      <p className="text-gray-300 mb-6">
-                        Free GTM audit and AI automation consultation
-                      </p>
-                      <a
-                        href="https://calendly.com/briannzau/n-a-intro-call"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block w-full text-center px-8 py-4 bg-[#00FFDD] text-[#0a0c1c] font-semibold rounded-lg transition-all duration-300 hover:bg-[#00D4AA] hover:shadow-[0_0_30px_rgba(0,255,221,0.3)] hover:scale-105 transform"
-                      >
-                        Schedule Your Call
-                      </a>
+                  <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-6 rounded-lg border border-white/20 dark:border-gray-700/30 h-full">
+                    <div className="w-12 h-12 bg-[#00FFDD]/20 rounded-lg flex items-center justify-center mb-4">
+                      <CheckCircleIcon className="h-6 w-6 text-[#00FFDD]" />
+                    </div>
+                    <h3 className="text-lg font-semibold mb-4 text-white">What to Expect</h3>
+                    <div className="space-y-3">
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-300 text-sm">30-minute discovery call</p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-300 text-sm">Free GTM audit</p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-300 text-sm">Custom proposal if there's a fit</p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-300 text-sm">No sales pitch—just insights</p>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* What to Expect */}
+                {/* Why Book a Call */}
                 <div className={`section-animate ${formInView ? 'in-view' : ''}`}>
-                  <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-8 rounded-lg border border-white/20 dark:border-gray-700/30 mb-8">
-                    <h3 className="text-xl font-semibold mb-6 text-white">What to Expect</h3>
-                    <div className="space-y-4">
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300">30-minute discovery call</p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300">Free GTM audit and actionable recommendations</p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300">Custom proposal if there's a good fit</p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300">No sales pitch—just valuable insights</p>
-                      </div>
+                  <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-6 rounded-lg border border-white/20 dark:border-gray-700/30 h-full">
+                    <div className="w-12 h-12 bg-[#00FFDD]/20 rounded-lg flex items-center justify-center mb-4">
+                      <LightBulbIcon className="h-6 w-6 text-[#00FFDD]" />
                     </div>
-                  </div>
-
-                  <div className="bg-white/5 dark:bg-black/10 backdrop-blur-sm p-6 rounded-lg border border-white/10 dark:border-gray-700/20">
-                    <h3 className="text-xl font-semibold mb-4 text-white">Why Book a Call?</h3>
+                    <h3 className="text-lg font-semibold mb-4 text-white">Why Book a Call?</h3>
                     <div className="space-y-3">
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300">Get expert insights on your current GTM approach</p>
+                        <p className="text-gray-300 text-sm">Expert insights on your GTM approach</p>
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300">Discover AI automation opportunities specific to your business</p>
+                        <p className="text-gray-300 text-sm">AI automation opportunities</p>
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300">Receive a custom roadmap for scaling your operations</p>
+                        <p className="text-gray-300 text-sm">Custom roadmap for scaling</p>
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300">Learn from operators who've scaled companies to millions in ARR</p>
+                        <p className="text-gray-300 text-sm">Learn from proven operators</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Who We Help */}
+                <div className={`section-animate ${formInView ? 'in-view' : ''}`}>
+                  <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-6 rounded-lg border border-white/20 dark:border-gray-700/30 h-full">
+                    <div className="w-12 h-12 bg-[#00FFDD]/20 rounded-lg flex items-center justify-center mb-4">
+                      <UserGroupIcon className="h-6 w-6 text-[#00FFDD]" />
+                    </div>
+                    <h3 className="text-lg font-semibold mb-4 text-white">Who We Help</h3>
+                    <div className="space-y-3">
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-300 text-sm">Early-stage startups</p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-300 text-sm">Growing SaaS companies</p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-300 text-sm">AI-native businesses</p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-300 text-sm">Scale-up companies</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Results You Can Expect */}
+                <div className={`section-animate ${formInView ? 'in-view' : ''}`}>
+                  <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-6 rounded-lg border border-white/20 dark:border-gray-700/30 h-full">
+                    <div className="w-12 h-12 bg-[#00FFDD]/20 rounded-lg flex items-center justify-center mb-4">
+                      <ChartBarIcon className="h-6 w-6 text-[#00FFDD]" />
+                    </div>
+                    <h3 className="text-lg font-semibold mb-4 text-white">Results You Can Expect</h3>
+                    <div className="space-y-3">
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-300 text-sm">3x more qualified leads</p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-300 text-sm">50% faster sales cycles</p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-300 text-sm">80% reduction in manual work</p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-300 text-sm">Measurable ROI within 90 days</p>
                       </div>
                     </div>
                   </div>
