@@ -28,12 +28,17 @@ module.exports = {
         },
       },
       maxWidth: {
-        content: '1280px',
+        content: '1200px',
       },
       spacing: {
-        gutter: '24px',
-        section: '80px',
+        gutter: '20px',
+        section: '60px',
         'section-mobile': '40px',
+      },
+      fontSize: {
+        'hero': ['3rem', { lineHeight: '1.1' }],
+        'hero-md': ['4rem', { lineHeight: '1.1' }],
+        'hero-lg': ['5rem', { lineHeight: '1.1' }],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

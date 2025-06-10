@@ -99,16 +99,16 @@ export default function HomePage() {
         <ParticleBackground />
         <div className="relative z-10 max-w-content mx-auto px-gutter text-center">
           <div className={`section-animate ${heroInView ? 'in-view' : ''}`}>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-hero md:text-hero-md lg:text-hero-lg font-bold mb-6 leading-tight">
               <span className="text-neon-primary">AI-Powered</span> Go-To-Market<br />
               Strategies for Tomorrow's Startups
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
               We consult, design, and implement seamless AI workflows that turn ideas into scalable growth.
             </p>
             <Link 
               href="/contact"
-              className="inline-block btn-primary text-lg px-12 py-4 animate-pulse-glow"
+              className="inline-block btn-primary text-lg px-8 py-4 animate-pulse-glow"
             >
               Book a Free Strategy Call
             </Link>
@@ -119,17 +119,17 @@ export default function HomePage() {
       {/* Process Section */}
       <section 
         ref={processRef}
-        className="py-section md:py-section bg-light-section dark:bg-dark-section"
+        className="py-section md:py-20 bg-light-section dark:bg-dark-section"
       >
         <div className="max-w-content mx-auto px-gutter">
-          <div className={`section-animate ${processInView ? 'in-view' : ''} text-center mb-16`}>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Our 4-Step Process</h2>
+          <div className={`section-animate ${processInView ? 'in-view' : ''} text-center mb-12`}>
+            <h2 className="text-2xl md:text-4xl font-bold mb-6">Our 4-Step Process</h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               From discovery to optimization, we guide you through every step of your AI-powered GTM transformation.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, index) => (
               <div
                 key={index}
@@ -139,8 +139,8 @@ export default function HomePage() {
                 <div className="w-12 h-12 bg-neon-primary/10 rounded-lg flex items-center justify-center mb-4">
                   <step.icon className="h-6 w-6 text-neon-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400">{step.description}</p>
+                <h3 className="text-lg font-semibold mb-3">{step.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">{step.description}</p>
               </div>
             ))}
           </div>
@@ -148,27 +148,27 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section ref={servicesRef} className="py-section md:py-section">
+      <section ref={servicesRef} className="py-section md:py-20">
         <div className="max-w-content mx-auto px-gutter">
-          <div className={`section-animate ${servicesInView ? 'in-view' : ''} text-center mb-16`}>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Tailored AI-Powered Services</h2>
+          <div className={`section-animate ${servicesInView ? 'in-view' : ''} text-center mb-12`}>
+            <h2 className="text-2xl md:text-4xl font-bold mb-6">Tailored AI-Powered Services</h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Comprehensive solutions designed to accelerate your go-to-market success.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`section-animate ${servicesInView ? 'in-view' : ''} card-hover bg-white dark:bg-dark-bg p-8 rounded-lg shadow-lg border border-transparent hover:border-neon-primary/30`}
+                className={`section-animate ${servicesInView ? 'in-view' : ''} card-hover bg-white dark:bg-dark-bg p-6 rounded-lg shadow-lg border border-transparent hover:border-neon-primary/30`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-16 h-16 bg-neon-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <service.icon className="h-8 w-8 text-neon-primary" />
+                <div className="w-12 h-12 bg-neon-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <service.icon className="h-6 w-6 text-neon-primary" />
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-6">{service.description}</p>
+                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">{service.description}</p>
                 <Link 
                   href="/services"
                   className="text-neon-primary font-medium hover:underline"
@@ -184,13 +184,13 @@ export default function HomePage() {
       {/* About Section */}
       <section 
         ref={aboutRef}
-        className="py-section md:py-section bg-light-section dark:bg-dark-section"
+        className="py-section md:py-20 bg-light-section dark:bg-dark-section"
       >
         <div className="max-w-content mx-auto px-gutter">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
             <div className={`section-animate ${aboutInView ? 'in-view' : ''} lg:col-span-3`}>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">Why Partner with Us?</h2>
-              <div className="space-y-6 text-lg text-gray-600 dark:text-gray-400">
+              <h2 className="text-2xl md:text-4xl font-bold mb-6">Why Partner with Us?</h2>
+              <div className="space-y-4 text-gray-600 dark:text-gray-400">
                 <p>
                   Our team combines deep GTM expertise with cutting-edge AI automation. We're not just consultants—we're 
                   operators who have scaled startups from zero to millions in ARR.
@@ -213,8 +213,8 @@ export default function HomePage() {
                     key={i}
                     className="aspect-square bg-gradient-to-br from-neon-primary/20 to-neon-secondary/20 rounded-full flex items-center justify-center group hover:scale-105 transition-transform duration-200"
                   >
-                    <div className="w-16 h-16 bg-white dark:bg-dark-bg rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-2xl font-bold text-neon-primary">T</span>
+                    <div className="w-12 h-12 bg-white dark:bg-dark-bg rounded-full flex items-center justify-center shadow-lg">
+                      <span className="text-lg font-bold text-neon-primary">T</span>
                     </div>
                   </div>
                 ))}
@@ -225,28 +225,28 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-section md:py-section bg-gradient-to-r from-light-section to-white dark:from-dark-section dark:to-dark-bg">
+      <section className="py-section md:py-20 bg-gradient-to-r from-light-section to-white dark:from-dark-section dark:to-dark-bg">
         <div className="max-w-content mx-auto px-gutter">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">What Our Clients Say</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-4xl font-bold mb-6">What Our Clients Say</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-dark-bg p-8 rounded-lg shadow-lg card-hover"
+                className="bg-white dark:bg-dark-bg p-6 rounded-lg shadow-lg card-hover"
               >
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-neon-primary to-neon-secondary rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white font-bold">{testimonial.name[0]}</span>
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-neon-primary to-neon-secondary rounded-full flex items-center justify-center mr-3">
+                    <span className="text-white font-bold text-sm">{testimonial.name[0]}</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.title}</p>
+                    <h4 className="font-semibold text-sm">{testimonial.name}</h4>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">{testimonial.title}</p>
                   </div>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 italic">"{testimonial.quote}"</p>
+                <p className="text-gray-600 dark:text-gray-400 italic text-sm">"{testimonial.quote}"</p>
               </div>
             ))}
           </div>
@@ -254,38 +254,38 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-section md:py-section">
+      <section className="py-section md:py-20">
         <div className="max-w-content mx-auto px-gutter">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              <h2 className="text-2xl md:text-4xl font-bold mb-6">
                 Schedule your free 30-minute strategy call
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
                 We'll audit your GTM strategy and explore AI workflow opportunities. No sales pitch—just 
                 actionable insights you can implement immediately.
               </p>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
-                  <span>30-minute discovery call</span>
+                  <span className="text-sm">30-minute discovery call</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
-                  <span>GTM strategy audit</span>
+                  <span className="text-sm">GTM strategy audit</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
-                  <span>AI automation opportunities</span>
+                  <span className="text-sm">AI automation opportunities</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
-                  <span>Custom roadmap & recommendations</span>
+                  <span className="text-sm">Custom roadmap & recommendations</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white dark:bg-dark-bg p-8 rounded-lg shadow-lg">
+            <div className="bg-white dark:bg-dark-bg p-6 rounded-lg shadow-lg">
               <ContactForm />
             </div>
           </div>

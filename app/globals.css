@@ -11,11 +11,13 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
 }
 
 /* Custom scrollbar */
@@ -69,10 +71,16 @@ body {
 .glitch {
   position: relative;
   color: #00FFDD;
-  font-size: 8rem;
+  font-size: 6rem;
   font-weight: 900;
   text-transform: uppercase;
   animation: glitch 2s infinite;
+}
+
+@media (min-width: 768px) {
+  .glitch {
+    font-size: 8rem;
+  }
 }
 
 .glitch::before,
@@ -123,10 +131,10 @@ body {
 
 /* Form styles */
 .form-input {
-  @apply w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg 
+  @apply w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg 
          bg-white dark:bg-dark-section text-light-text dark:text-dark-text
          focus:outline-none focus:ring-2 focus:ring-neon-primary focus:border-transparent
-         transition-all duration-200;
+         transition-all duration-200 text-sm;
 }
 
 .form-input:invalid {
@@ -134,15 +142,15 @@ body {
 }
 
 .btn-primary {
-  @apply bg-neon-primary text-black dark:text-white font-semibold py-3 px-8 rounded-lg
+  @apply bg-neon-primary text-black dark:text-white font-semibold py-3 px-6 rounded-lg
          hover:bg-opacity-80 hover:shadow-lg hover:shadow-neon-primary/30
-         transition-all duration-200 transform hover:scale-105;
+         transition-all duration-200 transform hover:scale-105 text-sm;
 }
 
 .btn-secondary {
-  @apply border-2 border-neon-primary text-neon-primary font-semibold py-3 px-8 rounded-lg
+  @apply border-2 border-neon-primary text-neon-primary font-semibold py-3 px-6 rounded-lg
          hover:bg-neon-primary hover:text-black dark:hover:text-white
-         transition-all duration-200 transform hover:scale-105;
+         transition-all duration-200 transform hover:scale-105 text-sm;
 }
 
 /* Card hover effects */
@@ -178,7 +186,7 @@ body {
 /* Toast notifications */
 .toast {
   @apply fixed bottom-4 right-4 bg-white dark:bg-dark-section border-l-4 border-neon-primary
-         p-4 rounded-lg shadow-lg z-50 max-w-sm;
+         p-4 rounded-lg shadow-lg z-50 max-w-sm text-sm;
   animation: slideInRight 0.3s ease-out;
 }
 
@@ -214,12 +222,31 @@ body {
 /* Responsive grid */
 .grid-responsive {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 @media (max-width: 768px) {
   .grid-responsive {
     grid-template-columns: 1fr;
+  }
+  
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Responsive text sizing */
+@media (max-width: 640px) {
+  .text-hero {
+    font-size: 2rem;
+  }
+  
+  .text-hero-md {
+    font-size: 2.5rem;
+  }
+  
+  .text-hero-lg {
+    font-size: 3rem;
   }
 }
