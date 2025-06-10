@@ -4,7 +4,6 @@ import './globals.css'
 import { ThemeProvider } from './providers/theme-provider'
 import { ToastProvider } from './providers/toast-provider'
 import Navigation from './components/Navigation'
-import Footer from './components/Footer'
 import CookieConsent from './components/CookieConsent'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -29,7 +28,6 @@ export default function RootLayout({
             <main className="min-h-screen">
               {children}
             </main>
-            <Footer />
             <CookieConsent />
           </ToastProvider>
         </ThemeProvider>
