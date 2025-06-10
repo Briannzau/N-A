@@ -133,14 +133,11 @@ export default function ServicesPage() {
       {mounted && <HexagonParticles />}
 
       <div className="relative z-10 pt-16">
-        {/* Hero Section - Glass background */}
+        {/* Hero Section - Transparent background */}
         <section 
           ref={heroRef}
           className="relative min-h-[80vh] flex items-center justify-center"
         >
-          {/* Glass background overlay */}
-          <div className="absolute inset-0 bg-white/10 dark:bg-black/20 backdrop-blur-md border-y border-white/20 dark:border-gray-700/30"></div>
-          
           {/* Content */}
           <div className="max-w-content mx-auto px-gutter relative z-10">
             <div className={`section-animate ${heroInView ? 'in-view' : ''} text-center`}>

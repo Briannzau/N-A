@@ -28,11 +28,8 @@ export default function ContactPage() {
       {mounted && <HexagonParticles />}
 
       <div className="relative z-10 pt-16">
-        {/* Hero Section - Glass background */}
+        {/* Hero Section - Transparent background */}
         <section ref={heroRef} className="py-section md:py-32 relative">
-          {/* Glass background overlay */}
-          <div className="absolute inset-0 bg-white/10 dark:bg-black/20 backdrop-blur-md border-y border-white/20 dark:border-gray-700/30"></div>
-          
           <div className="max-w-content mx-auto px-gutter relative z-10">
             <div className={`section-animate ${heroInView ? 'in-view' : ''} text-center`}>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
