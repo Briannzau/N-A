@@ -4,10 +4,7 @@ import { useInView } from 'react-intersection-observer'
 import { 
   LightBulbIcon, 
   ChartBarIcon, 
-  RocketLaunchIcon,
-  UserGroupIcon,
-  AcademicCapIcon,
-  BriefcaseIcon
+  RocketLaunchIcon
 } from '@heroicons/react/24/outline'
 import ContactForm from '../components/ContactForm'
 
@@ -29,38 +26,9 @@ const values = [
   }
 ]
 
-const team = [
-  {
-    name: 'Alex Chen',
-    title: 'Founder & CEO',
-    bio: 'Former VP of Growth at two unicorn startups. Built and scaled GTM teams from 0 to $100M ARR.',
-    linkedin: 'https://linkedin.com/in/alexchen'
-  },
-  {
-    name: 'Sarah Rodriguez',
-    title: 'Head of AI Strategy',
-    bio: 'Ex-Google AI researcher turned GTM operator. Expert in ML-powered sales and marketing automation.',
-    linkedin: 'https://linkedin.com/in/sarahrodriguez'
-  },
-  {
-    name: 'Marcus Johnson',
-    title: 'Senior GTM Consultant',
-    bio: 'Former Salesforce solutions architect. Specializes in CRM optimization and sales process automation.',
-    linkedin: 'https://linkedin.com/in/marcusjohnson'
-  },
-  {
-    name: 'Emily Watson',
-    title: 'Data & Analytics Lead',
-    bio: 'Former data scientist at Stripe. Builds custom analytics and reporting systems for GTM teams.',
-    linkedin: 'https://linkedin.com/in/emilywatson'
-  }
-]
-
 export default function AboutPage() {
   const [heroRef, heroInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [valuesRef, valuesInView] = useInView({ threshold: 0.1, triggerOnce: true })
-  const [teamRef, teamInView] = useInView({ threshold: 0.1, triggerOnce: true })
-  const [careersRef, careersInView] = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
     <div className="pt-16">
@@ -154,76 +122,38 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section ref={teamRef} className="py-section md:py-section">
-        <div className="max-w-content mx-auto px-gutter">
-          <div className={`section-animate ${teamInView ? 'in-view' : ''} text-center mb-16`}>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Meet Our Team</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              A diverse team of GTM operators, AI experts, and data scientists united by a passion for helping 
-              companies scale faster.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <div
-                key={index}
-                className={`section-animate ${teamInView ? 'in-view' : ''} text-center group`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="relative mb-6">
-                  <div className="w-32 h-32 bg-gradient-to-br from-neon-primary to-neon-secondary rounded-full mx-auto flex items-center justify-center text-white text-4xl font-bold group-hover:scale-105 transition-transform duration-200">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  <div className="absolute inset-0 bg-black/50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                    <a 
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-neon-primary hover:text-white transition-colors"
-                    >
-                      <BriefcaseIcon className="h-8 w-8" />
-                    </a>
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                <p className="text-neon-primary font-medium mb-3">{member.title}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{member.bio}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Careers Section */}
-      <section ref={careersRef} className="py-section md:py-section bg-light-section dark:bg-dark-section">
+      {/* Contact Section */}
+      <section className="py-section md:py-section">
         <div className="max-w-content mx-auto px-gutter">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className={`section-animate ${careersInView ? 'in-view' : ''}`}>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">Join Our Team</h2>
+            <div>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Scale?</h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-                We're always looking for talented GTM operators, AI engineers, and data scientists who share our 
-                vision of building the future of go-to-market.
+                Let's discuss your GTM challenges and explore how we can help you build an AI-powered 
+                system that scales faster than traditional approaches.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <UserGroupIcon className="h-6 w-6 text-neon-primary mr-3" />
-                  <span>Remote-first culture</span>
+                  <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
+                  <span>30-minute strategy call</span>
                 </div>
                 <div className="flex items-center">
-                  <AcademicCapIcon className="h-6 w-6 text-neon-primary mr-3" />
-                  <span>Continuous learning budget</span>
+                  <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
+                  <span>Free GTM audit</span>
                 </div>
                 <div className="flex items-center">
-                  <RocketLaunchIcon className="h-6 w-6 text-neon-primary mr-3" />
-                  <span>Equity in a fast-growing company</span>
+                  <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
+                  <span>Custom recommendations</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
+                  <span>No sales pitch—just insights</span>
                 </div>
               </div>
             </div>
 
-            <div className={`section-animate ${careersInView ? 'in-view' : ''} bg-white dark:bg-dark-bg p-8 rounded-lg shadow-lg`}>
-              <h3 className="text-2xl font-semibold mb-6">Interested in joining us?</h3>
+            <div className="bg-white dark:bg-dark-bg p-8 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-semibold mb-6">Get Your Free GTM Audit</h3>
               <ContactForm />
             </div>
           </div>
