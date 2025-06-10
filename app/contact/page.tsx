@@ -7,7 +7,6 @@ import {
   ClockIcon,
   CheckCircleIcon,
   UserGroupIcon,
-  ChartBarIcon,
   LightBulbIcon
 } from '@heroicons/react/24/outline'
 
@@ -82,8 +81,8 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* 4-Column Grid Layout */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* 3-Column Grid Layout */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* What to Expect */}
                 <div className={`section-animate ${formInView ? 'in-view' : ''}`}>
                   <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-6 rounded-lg border border-white/20 dark:border-gray-700/30 h-full">
@@ -163,34 +162,6 @@ export default function ContactPage() {
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <p className="text-gray-300 text-sm">Scale-up companies</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Results You Can Expect */}
-                <div className={`section-animate ${formInView ? 'in-view' : ''}`}>
-                  <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-6 rounded-lg border border-white/20 dark:border-gray-700/30 h-full">
-                    <div className="w-12 h-12 bg-[#00FFDD]/20 rounded-lg flex items-center justify-center mb-4">
-                      <ChartBarIcon className="h-6 w-6 text-[#00FFDD]" />
-                    </div>
-                    <h3 className="text-lg font-semibold mb-4 text-white">Results You Can Expect</h3>
-                    <div className="space-y-3">
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300 text-sm">3x more qualified leads</p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300 text-sm">50% faster sales cycles</p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300 text-sm">80% reduction in manual work</p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300 text-sm">Measurable ROI within 90 days</p>
                       </div>
                     </div>
                   </div>
