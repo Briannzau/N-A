@@ -131,18 +131,18 @@ export default function HomePage() {
 
   return (
     <div className="overflow-hidden">
-      {/* Hero Section */}
+      {/* Hero Section - Reduced height */}
       <section 
         ref={heroRef}
-        className="relative min-h-screen flex items-center justify-center bg-hero-light dark:bg-hero-dark"
+        className="relative h-screen flex items-center justify-center bg-hero-light dark:bg-hero-dark"
       >
         <ParticleBackground />
         <div className="relative z-10 max-w-content mx-auto px-gutter text-center">
           <div className={`section-animate ${heroInView ? 'in-view' : ''}`}>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
               Turn Vision into <span className="text-neon-primary">Velocity</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-6 max-w-3xl mx-auto leading-relaxed">
               Launch Smarter. Scale Faster.
             </p>
             <a 
@@ -157,14 +157,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Process Section - Reduced padding */}
       <section 
         ref={processRef}
-        className="py-16 md:py-20 bg-light-section dark:bg-dark-section"
+        className="py-12 md:py-16 bg-light-section dark:bg-dark-section"
       >
         <div className="max-w-content mx-auto px-gutter">
-          <div className={`section-animate ${processInView ? 'in-view' : ''} text-center mb-12`}>
-            <h2 className="text-2xl md:text-4xl font-bold mb-6">Our 4-Step Process</h2>
+          <div className={`section-animate ${processInView ? 'in-view' : ''} text-center mb-8`}>
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">Our 4-Step Process</h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               From discovery to optimization, we guide you through every step of your AI-powered GTM transformation.
             </p>
@@ -188,11 +188,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section ref={servicesRef} className="py-16 md:py-20">
+      {/* Services Section - Reduced padding */}
+      <section ref={servicesRef} className="py-12 md:py-16">
         <div className="max-w-content mx-auto px-gutter">
-          <div className={`section-animate ${servicesInView ? 'in-view' : ''} text-center mb-12`}>
-            <h2 className="text-2xl md:text-4xl font-bold mb-6">Tailored AI-Powered Services</h2>
+          <div className={`section-animate ${servicesInView ? 'in-view' : ''} text-center mb-8`}>
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">Tailored AI-Powered Services</h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Comprehensive solutions designed to accelerate your go-to-market success.
             </p>
@@ -222,14 +222,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Partner with Us - Redesigned Carousel */}
+      {/* Why Partner with Us - Reduced padding */}
       <section 
         ref={aboutRef}
-        className="py-20 md:py-32 bg-light-section dark:bg-dark-section relative"
+        className="py-16 md:py-20 bg-light-section dark:bg-dark-section relative"
       >
         <div className="max-w-content mx-auto px-gutter">
-          <div className={`section-animate ${aboutInView ? 'in-view' : ''} text-center mb-16`}>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Why Partner with Us?</h2>
+          <div className={`section-animate ${aboutInView ? 'in-view' : ''} text-center mb-12`}>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Why Partner with Us?</h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               Discover the advantages that set us apart in the AI-powered GTM space.
             </p>
@@ -237,8 +237,8 @@ export default function HomePage() {
 
           {/* Redesigned Carousel Container */}
           <div className="relative max-w-6xl mx-auto">
-            {/* Main Content Area */}
-            <div className="relative min-h-[500px] md:min-h-[400px]">
+            {/* Main Content Area - Reduced height */}
+            <div className="relative min-h-[400px] md:min-h-[350px]">
               {partnershipReasons.map((reason, index) => (
                 <div
                   key={index}
@@ -250,9 +250,9 @@ export default function HomePage() {
                         : 'opacity-0 transform translate-x-full'
                   }`}
                 >
-                  <div className="bg-white dark:bg-dark-bg rounded-2xl p-8 md:p-12 shadow-xl border border-gray-200 dark:border-gray-700">
+                  <div className="bg-white dark:bg-dark-bg rounded-2xl p-6 md:p-8 shadow-xl border border-gray-200 dark:border-gray-700">
                     {/* Header */}
-                    <div className="flex items-center mb-8">
+                    <div className="flex items-center mb-6">
                       <div className="w-16 h-16 bg-neon-primary/10 rounded-2xl flex items-center justify-center mr-6">
                         <reason.icon className="h-8 w-8 text-neon-primary" />
                       </div>
@@ -272,7 +272,7 @@ export default function HomePage() {
             </div>
 
             {/* Navigation Controls */}
-            <div className="flex items-center justify-between mt-8">
+            <div className="flex items-center justify-between mt-6">
               {/* Previous Button */}
               <button
                 onClick={prevSlide}
@@ -309,7 +309,7 @@ export default function HomePage() {
             </div>
 
             {/* Progress Bar */}
-            <div className="mt-6 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+            <div className="mt-4 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
               <div 
                 className="h-full bg-neon-primary transition-all duration-300 ease-out"
                 style={{ 
@@ -319,7 +319,7 @@ export default function HomePage() {
             </div>
 
             {/* Auto-play Control */}
-            <div className="text-center mt-6">
+            <div className="text-center mt-4">
               <button
                 onClick={() => setIsAutoPlaying(!isAutoPlaying)}
                 className="text-sm text-gray-500 dark:text-gray-400 hover:text-neon-primary transition-colors duration-200"
@@ -331,27 +331,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-16 md:py-20">
+      {/* Contact Section - Reduced padding */}
+      <section className="py-12 md:py-16">
         <div className="max-w-content mx-auto px-gutter">
           <div className="text-center">
-            <h2 className="text-2xl md:text-4xl font-bold mb-6">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">
               Schedule your free 30-minute strategy call
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-3xl mx-auto">
               We&apos;ll audit your GTM strategy and explore AI workflow opportunities. No sales pitch—just 
               actionable insights you can implement immediately.
             </p>
             
-            <div className="bg-white dark:bg-dark-bg p-8 rounded-lg shadow-lg max-w-2xl mx-auto mb-8">
+            <div className="bg-white dark:bg-dark-bg p-6 rounded-lg shadow-lg max-w-2xl mx-auto mb-6">
               <div className="text-center">
-                <ClockIcon className="h-16 w-16 text-neon-primary mx-auto mb-6" />
-                <h3 className="text-2xl font-bold mb-4">30-Minute Strategy Call</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                <ClockIcon className="h-12 w-12 text-neon-primary mx-auto mb-4" />
+                <h3 className="text-xl font-bold mb-3">30-Minute Strategy Call</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Free GTM audit and AI automation consultation
                 </p>
                 
-                <div className="space-y-3 mb-8">
+                <div className="space-y-2 mb-6">
                   <div className="flex items-center justify-center">
                     <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
                     <span className="text-sm">30-minute discovery call</span>
