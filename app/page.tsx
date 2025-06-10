@@ -140,11 +140,10 @@ export default function HomePage() {
         <div className="relative z-10 max-w-content mx-auto px-gutter text-center">
           <div className={`section-animate ${heroInView ? 'in-view' : ''}`}>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              <span className="text-neon-primary">AI-Powered</span> Go-To-Market<br />
-              Strategies for Tomorrow&apos;s Startups
+              Turn Vision into <span className="text-neon-primary">Velocity</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
-              We consult, design, and implement seamless AI workflows that turn ideas into scalable growth.
+              Launch Smarter. Scale Faster.
             </p>
             <a 
               href="https://calendly.com/briannzau/n-a-intro-call"
