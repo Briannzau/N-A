@@ -71,30 +71,30 @@ const partnershipReasons = [
   {
     icon: RocketLaunchIcon,
     title: 'Scale Without Headcount',
-    description: 'Our AI-powered systems handle the heavy lifting so your team can focus on strategy and high-value activities.',
+    description: 'Our AI-powered systems handle the heavy lifting so your team can focus on strategy and high-value activities. Automate repetitive tasks, qualify leads 24/7, and scale your operations without adding overhead.',
     stats: '3x faster growth with 50% less manual work',
-    color: 'from-blue-500 to-cyan-500'
+    highlight: 'AI Automation'
   },
   {
     icon: LightBulbIcon,
     title: 'Proven GTM Expertise',
-    description: 'We\'re not just consultants—we\'re operators who have scaled startups from zero to millions in ARR.',
+    description: 'We\'re not just consultants—we\'re operators who have scaled startups from zero to millions in ARR. Our team has hands-on experience building and optimizing GTM engines at high-growth companies.',
     stats: '$100M+ in revenue generated for clients',
-    color: 'from-purple-500 to-pink-500'
+    highlight: 'Operator Experience'
   },
   {
     icon: CpuChipIcon,
     title: 'Cutting-Edge AI Technology',
-    description: 'Leverage the latest AI and automation tools to gain unfair advantages over your competition.',
+    description: 'Leverage the latest AI and automation tools to gain unfair advantages over your competition. From predictive analytics to intelligent lead scoring, we deploy technology that gives you an edge.',
     stats: '24/7 automated workflows that never sleep',
-    color: 'from-green-500 to-emerald-500'
+    highlight: 'Advanced Technology'
   },
   {
     icon: ChartBarIcon,
     title: 'Measurable ROI',
-    description: 'Every strategy and implementation is designed to deliver measurable results from day one.',
+    description: 'Every strategy and implementation is designed to deliver measurable results from day one. We focus on metrics that matter: qualified leads, conversion rates, deal velocity, and revenue growth.',
     stats: 'Average 300% ROI within 6 months',
-    color: 'from-orange-500 to-red-500'
+    highlight: 'Data-Driven Results'
   }
 ]
 
@@ -113,7 +113,7 @@ export default function HomePage() {
     
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % partnershipReasons.length)
-    }, 4000)
+    }, 5000)
     
     return () => clearInterval(interval)
   }, [isAutoPlaying, aboutInView])
@@ -225,23 +225,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Partner with Us - Animated Carousel */}
+      {/* Why Partner with Us - Redesigned Carousel */}
       <section 
         ref={aboutRef}
-        className="py-16 md:py-20 bg-light-section dark:bg-dark-section relative overflow-hidden"
+        className="py-20 md:py-32 bg-light-section dark:bg-dark-section relative"
       >
         <div className="max-w-content mx-auto px-gutter">
-          <div className={`section-animate ${aboutInView ? 'in-view' : ''} text-center mb-12`}>
-            <h2 className="text-2xl md:text-4xl font-bold mb-6">Why Partner with Us?</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <div className={`section-animate ${aboutInView ? 'in-view' : ''} text-center mb-16`}>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Why Partner with Us?</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               Discover the advantages that set us apart in the AI-powered GTM space.
             </p>
           </div>
 
-          {/* Carousel Container */}
-          <div className="relative">
-            {/* Main Carousel */}
-            <div className="relative h-96 md:h-80 overflow-hidden rounded-2xl">
+          {/* Redesigned Carousel Container */}
+          <div className="relative max-w-6xl mx-auto">
+            {/* Main Content Area */}
+            <div className="relative min-h-[500px] md:min-h-[400px]">
               {partnershipReasons.map((reason, index) => (
                 <div
                   key={index}
@@ -253,86 +253,89 @@ export default function HomePage() {
                         : 'opacity-0 transform translate-x-full'
                   }`}
                 >
-                  <div className={`h-full bg-gradient-to-br ${reason.color} p-8 md:p-12 text-white relative overflow-hidden`}>
-                    {/* Background Pattern */}
-                    <div className="absolute inset-0 opacity-10">
-                      <div className="absolute inset-0" style={{
-                        backgroundImage: `radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 70% 50%, white 1px, transparent 1px)`,
-                        backgroundSize: '50px 50px'
-                      }} />
-                    </div>
-                    
-                    <div className="relative z-10 h-full flex flex-col justify-center">
-                      <div className="flex items-center mb-6">
-                        <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mr-6">
-                          <reason.icon className="h-8 w-8 text-white" />
+                  <div className="bg-white dark:bg-dark-bg rounded-2xl p-8 md:p-12 shadow-xl border border-gray-200 dark:border-gray-700">
+                    {/* Header */}
+                    <div className="flex items-start justify-between mb-8">
+                      <div className="flex items-center">
+                        <div className="w-16 h-16 bg-neon-primary/10 rounded-2xl flex items-center justify-center mr-6">
+                          <reason.icon className="h-8 w-8 text-neon-primary" />
                         </div>
                         <div>
-                          <h3 className="text-2xl md:text-3xl font-bold">{reason.title}</h3>
-                          <p className="text-white/80 text-sm md:text-base">{reason.stats}</p>
+                          <div className="text-sm font-medium text-neon-primary mb-1">{reason.highlight}</div>
+                          <h3 className="text-2xl md:text-3xl font-bold text-light-text dark:text-dark-text">{reason.title}</h3>
                         </div>
                       </div>
-                      <p className="text-lg md:text-xl leading-relaxed text-white/90">
-                        {reason.description}
-                      </p>
+                      <div className="text-right">
+                        <div className="text-sm text-gray-500 dark:text-gray-400">Key Metric</div>
+                        <div className="text-lg font-semibold text-neon-primary">{reason.stats}</div>
+                      </div>
                     </div>
+
+                    {/* Description */}
+                    <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                      {reason.description}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200"
-              aria-label="Previous slide"
-            >
-              <ArrowLeftIcon className="h-6 w-6" />
-            </button>
-            
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200"
-              aria-label="Next slide"
-            >
-              <ArrowRightIcon className="h-6 w-6" />
-            </button>
+            {/* Navigation Controls */}
+            <div className="flex items-center justify-between mt-8">
+              {/* Previous Button */}
+              <button
+                onClick={prevSlide}
+                className="flex items-center justify-center w-12 h-12 bg-white dark:bg-dark-bg rounded-full shadow-lg border border-gray-200 dark:border-gray-700 hover:border-neon-primary transition-all duration-200 group"
+                aria-label="Previous slide"
+              >
+                <ArrowLeftIcon className="h-5 w-5 text-gray-600 dark:text-gray-400 group-hover:text-neon-primary" />
+              </button>
 
-            {/* Slide Indicators */}
-            <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3">
-              {partnershipReasons.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                    index === currentSlide 
-                      ? 'bg-white scale-125' 
-                      : 'bg-white/50 hover:bg-white/75'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
+              {/* Slide Indicators */}
+              <div className="flex space-x-3">
+                {partnershipReasons.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                      index === currentSlide 
+                        ? 'bg-neon-primary scale-125' 
+                        : 'bg-gray-300 dark:bg-gray-600 hover:bg-neon-primary/50'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+
+              {/* Next Button */}
+              <button
+                onClick={nextSlide}
+                className="flex items-center justify-center w-12 h-12 bg-white dark:bg-dark-bg rounded-full shadow-lg border border-gray-200 dark:border-gray-700 hover:border-neon-primary transition-all duration-200 group"
+                aria-label="Next slide"
+              >
+                <ArrowRightIcon className="h-5 w-5 text-gray-600 dark:text-gray-400 group-hover:text-neon-primary" />
+              </button>
             </div>
 
             {/* Progress Bar */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
+            <div className="mt-6 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
               <div 
-                className="h-full bg-white transition-all duration-100 ease-linear"
+                className="h-full bg-neon-primary transition-all duration-300 ease-out"
                 style={{ 
-                  width: isAutoPlaying && aboutInView ? `${((currentSlide + 1) / partnershipReasons.length) * 100}%` : '0%'
+                  width: `${((currentSlide + 1) / partnershipReasons.length) * 100}%`
                 }}
               />
             </div>
-          </div>
 
-          {/* Auto-play Control */}
-          <div className="text-center mt-8">
-            <button
-              onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-              className="text-sm text-gray-600 dark:text-gray-400 hover:text-neon-primary transition-colors duration-200"
-            >
-              {isAutoPlaying ? 'Pause Auto-play' : 'Resume Auto-play'}
-            </button>
+            {/* Auto-play Control */}
+            <div className="text-center mt-6">
+              <button
+                onClick={() => setIsAutoPlaying(!isAutoPlaying)}
+                className="text-sm text-gray-500 dark:text-gray-400 hover:text-neon-primary transition-colors duration-200"
+              >
+                {isAutoPlaying ? 'Pause Auto-play' : 'Resume Auto-play'}
+              </button>
+            </div>
           </div>
         </div>
       </section>
