@@ -3,38 +3,9 @@
 import { useInView } from 'react-intersection-observer'
 import ContactForm from '../components/ContactForm'
 import { 
-  EnvelopeIcon, 
-  PhoneIcon, 
   MapPinIcon,
   ClockIcon
 } from '@heroicons/react/24/outline'
-
-const contactInfo = [
-  {
-    icon: EnvelopeIcon,
-    title: 'Email',
-    details: 'support@na-agency.ai',
-    description: 'Send us an email anytime'
-  },
-  {
-    icon: PhoneIcon,
-    title: 'Phone',
-    details: '(123) 456-7890',
-    description: 'Mon-Fri from 8am to 6pm PST'
-  },
-  {
-    icon: MapPinIcon,
-    title: 'Location',
-    details: 'San Francisco, CA',
-    description: 'Remote-first company'
-  },
-  {
-    icon: ClockIcon,
-    title: 'Response Time',
-    details: '< 24 hours',
-    description: 'We respond to all inquiries quickly'
-  }
-]
 
 export default function ContactPage() {
   const [heroRef, heroInView] = useInView({ threshold: 0.1, triggerOnce: true })
@@ -68,7 +39,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Form & Info */}
+      {/* Contact Form & Calendar */}
       <section ref={formRef} className="py-section md:py-section">
         <div className="max-w-content mx-auto px-gutter">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -76,8 +47,8 @@ export default function ContactPage() {
             <div className={`section-animate ${formInView ? 'in-view' : ''}`}>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Get Your Free GTM Audit</h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-                Schedule a 30-minute strategy call where we'll audit your current GTM approach and identify 
-                AI automation opportunities—completely free, no strings attached.
+                Fill out the form below and we'll send you a calendar link to schedule your 
+                30-minute strategy call—completely free, no strings attached.
               </p>
               
               <div className="bg-white dark:bg-dark-bg p-8 rounded-lg shadow-lg">
@@ -85,29 +56,29 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Contact Information */}
+            {/* Calendar Booking */}
             <div className={`section-animate ${formInView ? 'in-view' : ''}`}>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Get in Touch</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Book Your Call Directly</h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-                Prefer to reach out directly? Here are all the ways you can contact us.
+                Prefer to schedule immediately? Click below to book your strategy call directly.
               </p>
 
-              <div className="space-y-6 mb-12">
-                {contactInfo.map((info, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start space-x-4 p-4 bg-white dark:bg-dark-bg rounded-lg shadow-lg card-hover"
+              <div className="bg-white dark:bg-dark-bg p-8 rounded-lg shadow-lg mb-8">
+                <div className="text-center">
+                  <ClockIcon className="h-16 w-16 text-neon-primary mx-auto mb-6" />
+                  <h3 className="text-2xl font-bold mb-4">30-Minute Strategy Call</h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-6">
+                    Free GTM audit and AI automation consultation
+                  </p>
+                  <a
+                    href="https://calendly.com/briannzau/n-a-intro-call"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-block w-full text-center"
                   >
-                    <div className="w-12 h-12 bg-neon-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <info.icon className="h-6 w-6 text-neon-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">{info.title}</h3>
-                      <p className="text-neon-primary font-medium mb-1">{info.details}</p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">{info.description}</p>
-                    </div>
-                  </div>
-                ))}
+                    Schedule Your Call
+                  </a>
+                </div>
               </div>
 
               {/* What to Expect */}
@@ -116,7 +87,7 @@ export default function ContactPage() {
                 <div className="space-y-3">
                   <div className="flex items-start">
                     <div className="w-2 h-2 bg-neon-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <p className="text-gray-600 dark:text-gray-400">30-minute discovery call within 24 hours</p>
+                    <p className="text-gray-600 dark:text-gray-400">30-minute discovery call</p>
                   </div>
                   <div className="flex items-start">
                     <div className="w-2 h-2 bg-neon-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
@@ -163,11 +134,13 @@ export default function ContactPage() {
               <span className="font-medium">Twitter</span>
             </a>
             <a 
-              href="mailto:support@na-agency.ai"
+              href="https://calendly.com/briannzau/n-a-intro-call"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center space-x-2 bg-neon-primary text-black px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 card-hover"
             >
-              <EnvelopeIcon className="h-5 w-5" />
-              <span className="font-medium">Email Us</span>
+              <ClockIcon className="h-5 w-5" />
+              <span className="font-medium">Book a Call</span>
             </a>
           </div>
         </div>
