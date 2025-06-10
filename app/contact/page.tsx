@@ -2,7 +2,6 @@
 
 import { useInView } from 'react-intersection-observer'
 import { 
-  MapPinIcon,
   ClockIcon
 } from '@heroicons/react/24/outline'
 
@@ -23,17 +22,6 @@ export default function ContactPage() {
               Ready to transform your go-to-market strategy with AI? Let's discuss your challenges and 
               explore how we can help you scale faster.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="h-96 bg-gray-200 dark:bg-gray-800 relative overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <MapPinIcon className="h-16 w-16 text-neon-primary mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-2">San Francisco, CA</h3>
-            <p className="text-gray-600 dark:text-gray-400">Remote-first company</p>
           </div>
         </div>
       </section>
@@ -118,44 +106,6 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Additional Contact Options */}
-      <section className="py-section md:py-section bg-light-section dark:bg-dark-section">
-        <div className="max-w-content mx-auto px-gutter text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Other Ways to Connect</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-            Follow us on social media for GTM insights, AI automation tips, and company updates.
-          </p>
-          
-          <div className="flex justify-center space-x-6">
-            <a 
-              href="https://linkedin.com/company/na-agency" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-white dark:bg-dark-bg px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 card-hover"
-            >
-              <span className="font-medium">LinkedIn</span>
-            </a>
-            <a 
-              href="https://twitter.com/na_agency" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-white dark:bg-dark-bg px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 card-hover"
-            >
-              <span className="font-medium">Twitter</span>
-            </a>
-            <a 
-              href="https://calendly.com/briannzau/n-a-intro-call"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-neon-primary text-black px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 card-hover"
-            >
-              <ClockIcon className="h-5 w-5" />
-              <span className="font-medium">Book a Call</span>
-            </a>
           </div>
         </div>
       </section>

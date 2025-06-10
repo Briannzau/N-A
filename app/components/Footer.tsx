@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white dark:bg-dark-section">
       <div className="max-w-content mx-auto px-gutter py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo & Description */}
           <div className="col-span-1 md:col-span-1">
             <h3 className="text-xl font-bold mb-4">N/A</h3>
@@ -31,25 +31,6 @@ export default function Footer() {
               <li><span className="text-gray-400">Growth Analytics</span></li>
               <li><span className="text-gray-400">Customer Success AI</span></li>
             </ul>
-          </div>
-
-          {/* Social & Legal */}
-          <div>
-            <h4 className="font-semibold mb-4">Connect</h4>
-            <div className="space-y-2 text-sm">
-              <a href="https://linkedin.com" className="block text-gray-400 hover:text-neon-primary transition-colors">
-                LinkedIn
-              </a>
-              <a href="https://twitter.com" className="block text-gray-400 hover:text-neon-primary transition-colors">
-                Twitter
-              </a>
-              <Link href="/privacy" className="block text-gray-400 hover:text-neon-primary transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="block text-gray-400 hover:text-neon-primary transition-colors">
-                Terms of Service
-              </Link>
-            </div>
           </div>
         </div>
 
