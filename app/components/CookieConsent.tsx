@@ -26,15 +26,15 @@ export default function CookieConsent() {
   if (!showConsent) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-dark-section border-t border-gray-200 dark:border-gray-700 p-4 z-50">
+    <div className="fixed bottom-0 left-0 right-0 bg-black border-t border-gray-700 p-4 z-50">
       <div className="max-w-content mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-gray-600 dark:text-gray-400">
+        <p className="text-sm text-gray-400">
           We use cookies to analyze traffic and improve your experience. 
         </p>
         <div className="flex gap-3">
           <button
             onClick={rejectNonEssential}
-            className="px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+            className="px-4 py-2 text-sm border border-gray-600 rounded-lg hover:bg-gray-800 transition-colors text-white"
           >
             Reject Non-Essential
           </button>
