@@ -14,9 +14,9 @@ import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
 
 // Dynamic import to avoid SSR issues
-const NeuralNetworkParticles = dynamic(() => import('../components/NeuralNetworkParticles'), {
+const HexagonParticles = dynamic(() => import('../components/HexagonParticles'), {
   ssr: false,
-  loading: () => <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] to-[#050505]" />
+  loading: () => <div className="absolute inset-0 bg-[#0a0c1c]" />
 })
 
 const services = [
@@ -128,158 +128,157 @@ export default function ServicesPage() {
   }, [])
 
   return (
-    <div className="pt-16">
-      {/* Hero Section with Neural Network Background */}
-      <section 
-        ref={heroRef}
-        className="relative min-h-[80vh] flex items-center justify-center overflow-hidden"
-      >
-        {/* Deep gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] to-[#050505]" />
-        
-        {/* Neural Network Particles */}
-        {mounted && <NeuralNetworkParticles />}
-        
-        {/* Content */}
-        <div className="max-w-content mx-auto px-gutter relative z-10">
-          <div className={`section-animate ${heroInView ? 'in-view' : ''} text-center`}>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
-              Our <span className="text-[#00FFDD]">Services</span>
-            </h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-              End-to-end AI-powered solutions designed to accelerate your go-to-market success and drive sustainable growth.
-            </p>
+    <div className="relative min-h-screen bg-[#0a0c1c] overflow-hidden">
+      {/* Hexagon Particles Background */}
+      {mounted && <HexagonParticles />}
+
+      <div className="relative z-10 pt-16">
+        {/* Hero Section - Glass background */}
+        <section 
+          ref={heroRef}
+          className="relative min-h-[80vh] flex items-center justify-center"
+        >
+          {/* Glass background overlay */}
+          <div className="absolute inset-0 bg-white/10 dark:bg-black/20 backdrop-blur-md border-y border-white/20 dark:border-gray-700/30"></div>
+          
+          {/* Content */}
+          <div className="max-w-content mx-auto px-gutter relative z-10">
+            <div className={`section-animate ${heroInView ? 'in-view' : ''} text-center`}>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
+                Our <span className="text-[#00FFDD]">Services</span>
+              </h1>
+              <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                End-to-end AI-powered solutions designed to accelerate your go-to-market success and drive sustainable growth.
+              </p>
+            </div>
           </div>
-        </div>
-        
-        {/* Gradient overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 pointer-events-none z-5" />
-      </section>
+        </section>
 
-      {/* Services Detail Section - Glass background */}
-      <section ref={servicesRef} className="py-section md:py-section relative">
-        {/* Glass background overlay */}
-        <div className="absolute inset-0 bg-white/10 dark:bg-black/20 backdrop-blur-md border-y border-white/20 dark:border-gray-700/30"></div>
-        
-        <div className="max-w-content mx-auto px-gutter relative z-10">
-          <div className="space-y-24">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className={`section-animate ${servicesInView ? 'in-view' : ''}`}
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                    <div className="w-16 h-16 bg-[#00FFDD]/20 rounded-lg flex items-center justify-center mb-6">
-                      <service.icon className="h-8 w-8 text-[#00FFDD]" />
-                    </div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">{service.title}</h2>
-                    <p className="text-lg text-gray-300 mb-8">{service.description}</p>
-                    
-                    <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4 text-white">Key Features:</h3>
-                      <ul className="space-y-3">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-start">
-                            <CheckIcon className="h-5 w-5 text-[#00FFDD] mt-0.5 mr-3 flex-shrink-0" />
-                            <span className="text-gray-300">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <Link 
-                      href="/contact"
-                      className="inline-flex items-center px-6 py-3 bg-[#00FFDD] text-black font-semibold rounded-lg hover:bg-[#00D4AA] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,221,0.3)]"
-                    >
-                      Get Started
-                      <ArrowRightIcon className="h-5 w-5 ml-2" />
-                    </Link>
-                  </div>
-
-                  <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                    <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-8 rounded-lg border border-white/20 dark:border-gray-700/30">
-                      <h3 className="text-xl font-semibold mb-6 text-white">What You'll Get:</h3>
-                      <ul className="space-y-4">
-                        {service.deliverables.map((deliverable, deliverableIndex) => (
-                          <li key={deliverableIndex} className="flex items-center">
-                            <div className="w-2 h-2 bg-[#00FFDD] rounded-full mr-3"></div>
-                            <span className="text-gray-300">{deliverable}</span>
-                          </li>
-                        ))}
-                      </ul>
+        {/* Services Detail Section - Glass background */}
+        <section ref={servicesRef} className="py-section md:py-section relative">
+          {/* Glass background overlay */}
+          <div className="absolute inset-0 bg-black/10 dark:bg-white/5 backdrop-blur-md border-y border-white/10 dark:border-gray-700/20"></div>
+          
+          <div className="max-w-content mx-auto px-gutter relative z-10">
+            <div className="space-y-24">
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className={`section-animate ${servicesInView ? 'in-view' : ''}`}
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+                      <div className="w-16 h-16 bg-[#00FFDD]/20 rounded-lg flex items-center justify-center mb-6">
+                        <service.icon className="h-8 w-8 text-[#00FFDD]" />
+                      </div>
+                      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">{service.title}</h2>
+                      <p className="text-lg text-gray-300 mb-8">{service.description}</p>
                       
-                      <div className="mt-8 p-4 bg-[#00FFDD]/10 rounded-lg border border-[#00FFDD]/20">
-                        <p className="text-sm text-gray-300">
-                          <strong className="text-white">Timeline:</strong> 4-8 weeks implementation + ongoing optimization
-                        </p>
+                      <div className="mb-8">
+                        <h3 className="text-xl font-semibold mb-4 text-white">Key Features:</h3>
+                        <ul className="space-y-3">
+                          {service.features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-start">
+                              <CheckIcon className="h-5 w-5 text-[#00FFDD] mt-0.5 mr-3 flex-shrink-0" />
+                              <span className="text-gray-300">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <Link 
+                        href="/contact"
+                        className="inline-flex items-center px-6 py-3 bg-[#00FFDD] text-black font-semibold rounded-lg hover:bg-[#00D4AA] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,221,0.3)]"
+                      >
+                        Get Started
+                        <ArrowRightIcon className="h-5 w-5 ml-2" />
+                      </Link>
+                    </div>
+
+                    <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
+                      <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-8 rounded-lg border border-white/20 dark:border-gray-700/30">
+                        <h3 className="text-xl font-semibold mb-6 text-white">What You'll Get:</h3>
+                        <ul className="space-y-4">
+                          {service.deliverables.map((deliverable, deliverableIndex) => (
+                            <li key={deliverableIndex} className="flex items-center">
+                              <div className="w-2 h-2 bg-[#00FFDD] rounded-full mr-3"></div>
+                              <span className="text-gray-300">{deliverable}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        
+                        <div className="mt-8 p-4 bg-[#00FFDD]/10 rounded-lg border border-[#00FFDD]/20">
+                          <p className="text-sm text-gray-300">
+                            <strong className="text-white">Timeline:</strong> 4-8 weeks implementation + ongoing optimization
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ Section - Glass background */}
-      <section ref={faqRef} className="py-section md:py-section relative">
-        {/* Glass background overlay */}
-        <div className="absolute inset-0 bg-black/10 dark:bg-white/5 backdrop-blur-md border-y border-white/10 dark:border-gray-700/20"></div>
-        
-        <div className="max-w-4xl mx-auto px-gutter relative z-10">
-          <div className={`section-animate ${faqInView ? 'in-view' : ''} text-center mb-16`}>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Frequently Asked Questions</h2>
-            <p className="text-lg text-gray-300">
-              Everything you need to know about our services and process.
+        {/* FAQ Section - Glass background */}
+        <section ref={faqRef} className="py-section md:py-section relative">
+          {/* Glass background overlay */}
+          <div className="absolute inset-0 bg-white/10 dark:bg-black/20 backdrop-blur-md border-y border-white/20 dark:border-gray-700/30"></div>
+          
+          <div className="max-w-4xl mx-auto px-gutter relative z-10">
+            <div className={`section-animate ${faqInView ? 'in-view' : ''} text-center mb-16`}>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Frequently Asked Questions</h2>
+              <p className="text-lg text-gray-300">
+                Everything you need to know about our services and process.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className={`section-animate ${faqInView ? 'in-view' : ''} bg-white/10 dark:bg-black/20 backdrop-blur-sm p-6 rounded-lg border border-white/20 dark:border-gray-700/30 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-300`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <h3 className="text-xl font-semibold mb-3 text-white">{faq.question}</h3>
+                  <p className="text-gray-300">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section - Glass background */}
+        <section className="py-section md:py-section relative">
+          {/* Glass background overlay */}
+          <div className="absolute inset-0 bg-black/10 dark:bg-white/5 backdrop-blur-md border-y border-white/10 dark:border-gray-700/20"></div>
+          
+          <div className="max-w-content mx-auto px-gutter text-center relative z-10">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+              Ready to <span className="text-[#00FFDD]">accelerate</span> your growth?
+            </h2>
+            <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+              Let's discuss your GTM challenges and build a custom AI-powered solution that drives results.
             </p>
-          </div>
-
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className={`section-animate ${faqInView ? 'in-view' : ''} bg-white/10 dark:bg-black/20 backdrop-blur-sm p-6 rounded-lg border border-white/20 dark:border-gray-700/30 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-300`}
-                style={{ animationDelay: `${index * 0.1}s` }}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/contact" 
+                className="px-6 py-3 bg-[#00FFDD] text-black font-semibold rounded-lg hover:bg-[#00D4AA] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,221,0.3)]"
               >
-                <h3 className="text-xl font-semibold mb-3 text-white">{faq.question}</h3>
-                <p className="text-gray-300">{faq.answer}</p>
-              </div>
-            ))}
+                Book a Strategy Call
+              </Link>
+              <Link 
+                href="/about" 
+                className="px-6 py-3 border-2 border-[#00FFDD] text-[#00FFDD] font-semibold rounded-lg hover:bg-[#00FFDD] hover:text-black transition-all duration-300"
+              >
+                Learn About Us
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section - Glass background */}
-      <section className="py-section md:py-section relative">
-        {/* Glass background overlay */}
-        <div className="absolute inset-0 bg-white/10 dark:bg-black/20 backdrop-blur-md border-y border-white/20 dark:border-gray-700/30"></div>
-        
-        <div className="max-w-content mx-auto px-gutter text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-            Ready to <span className="text-[#00FFDD]">accelerate</span> your growth?
-          </h2>
-          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Let's discuss your GTM challenges and build a custom AI-powered solution that drives results.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/contact" 
-              className="px-6 py-3 bg-[#00FFDD] text-black font-semibold rounded-lg hover:bg-[#00D4AA] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,221,0.3)]"
-            >
-              Book a Strategy Call
-            </Link>
-            <Link 
-              href="/about" 
-              className="px-6 py-3 border-2 border-[#00FFDD] text-[#00FFDD] font-semibold rounded-lg hover:bg-[#00FFDD] hover:text-black transition-all duration-300"
-            >
-              Learn About Us
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   )
 }
