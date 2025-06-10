@@ -316,8 +316,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact Section - Glass background */}
-      <section className="py-12 md:py-16 relative">
+      {/* Contact Section - Glass background with proper bottom spacing */}
+      <section className="py-12 md:py-16 pb-20 md:pb-24 relative">
         {/* Glass background overlay */}
         <div className="absolute inset-0 bg-black/10 dark:bg-white/5 backdrop-blur-md border-y border-white/10 dark:border-gray-700/20"></div>
         
