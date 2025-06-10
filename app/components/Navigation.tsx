@@ -9,7 +9,6 @@ import { SunIcon, MoonIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/out
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
-  { name: 'Case Studies', href: '/case-studies' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ]

@@ -248,8 +248,8 @@ export default function ServicesPage() {
             <Link href="/contact" className="btn-primary">
               Book a Strategy Call
             </Link>
-            <Link href="/case-studies" className="btn-secondary">
-              View Case Studies
+            <Link href="/services" className="btn-secondary">
+              View Our Services
             </Link>
           </div>
         </div>
