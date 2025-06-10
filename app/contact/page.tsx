@@ -1,7 +1,6 @@
 'use client'
 
 import { useInView } from 'react-intersection-observer'
-import ContactForm from '../components/ContactForm'
 import { 
   MapPinIcon,
   ClockIcon
@@ -39,67 +38,82 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Form & Calendar */}
+      {/* Calendar Booking */}
       <section ref={formRef} className="py-section md:py-section">
         <div className="max-w-content mx-auto px-gutter">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div className={`section-animate ${formInView ? 'in-view' : ''}`}>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Get Your Free GTM Audit</h2>
+          <div className="max-w-4xl mx-auto">
+            <div className={`section-animate ${formInView ? 'in-view' : ''} text-center mb-12`}>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Book Your Strategy Call</h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-                Fill out the form below and we'll send you a calendar link to schedule your 
-                30-minute strategy call—completely free, no strings attached.
+                Schedule your 30-minute strategy call directly and get started on your GTM transformation.
               </p>
-              
-              <div className="bg-white dark:bg-dark-bg p-8 rounded-lg shadow-lg">
-                <ContactForm />
-              </div>
             </div>
 
-            {/* Calendar Booking */}
-            <div className={`section-animate ${formInView ? 'in-view' : ''}`}>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Book Your Call Directly</h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-                Prefer to schedule immediately? Click below to book your strategy call directly.
-              </p>
-
-              <div className="bg-white dark:bg-dark-bg p-8 rounded-lg shadow-lg mb-8">
-                <div className="text-center">
-                  <ClockIcon className="h-16 w-16 text-neon-primary mx-auto mb-6" />
-                  <h3 className="text-2xl font-bold mb-4">30-Minute Strategy Call</h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6">
-                    Free GTM audit and AI automation consultation
-                  </p>
-                  <a
-                    href="https://calendly.com/briannzau/n-a-intro-call"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary inline-block w-full text-center"
-                  >
-                    Schedule Your Call
-                  </a>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Calendar Booking */}
+              <div className={`section-animate ${formInView ? 'in-view' : ''}`}>
+                <div className="bg-white dark:bg-dark-bg p-8 rounded-lg shadow-lg">
+                  <div className="text-center">
+                    <ClockIcon className="h-16 w-16 text-neon-primary mx-auto mb-6" />
+                    <h3 className="text-2xl font-bold mb-4">30-Minute Strategy Call</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6">
+                      Free GTM audit and AI automation consultation
+                    </p>
+                    <a
+                      href="https://calendly.com/briannzau/n-a-intro-call"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-block w-full text-center"
+                    >
+                      Schedule Your Call
+                    </a>
+                  </div>
                 </div>
               </div>
 
               {/* What to Expect */}
-              <div className="bg-light-section dark:bg-dark-section p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4">What to Expect</h3>
-                <div className="space-y-3">
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-neon-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <p className="text-gray-600 dark:text-gray-400">30-minute discovery call</p>
+              <div className={`section-animate ${formInView ? 'in-view' : ''}`}>
+                <div className="bg-white dark:bg-dark-bg p-8 rounded-lg shadow-lg mb-8">
+                  <h3 className="text-xl font-semibold mb-6">What to Expect</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start">
+                      <div className="w-2 h-2 bg-neon-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <p className="text-gray-600 dark:text-gray-400">30-minute discovery call</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-2 h-2 bg-neon-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <p className="text-gray-600 dark:text-gray-400">Free GTM audit and actionable recommendations</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-2 h-2 bg-neon-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <p className="text-gray-600 dark:text-gray-400">Custom proposal if there's a good fit</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-2 h-2 bg-neon-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <p className="text-gray-600 dark:text-gray-400">No sales pitch—just valuable insights</p>
+                    </div>
                   </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-neon-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <p className="text-gray-600 dark:text-gray-400">Free GTM audit and actionable recommendations</p>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-neon-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <p className="text-gray-600 dark:text-gray-400">Custom proposal if there's a good fit</p>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-neon-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <p className="text-gray-600 dark:text-gray-400">No sales pitch—just valuable insights</p>
+                </div>
+
+                <div className="bg-light-section dark:bg-dark-section p-6 rounded-lg">
+                  <h3 className="text-xl font-semibold mb-4">Why Book a Call?</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-start">
+                      <div className="w-2 h-2 bg-neon-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <p className="text-gray-600 dark:text-gray-400">Get expert insights on your current GTM approach</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-2 h-2 bg-neon-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <p className="text-gray-600 dark:text-gray-400">Discover AI automation opportunities specific to your business</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-2 h-2 bg-neon-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <p className="text-gray-600 dark:text-gray-400">Receive a custom roadmap for scaling your operations</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-2 h-2 bg-neon-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <p className="text-gray-600 dark:text-gray-400">Learn from operators who've scaled companies to millions in ARR</p>
+                    </div>
                   </div>
                 </div>
               </div>

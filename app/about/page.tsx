@@ -4,9 +4,9 @@ import { useInView } from 'react-intersection-observer'
 import { 
   LightBulbIcon, 
   ChartBarIcon, 
-  RocketLaunchIcon
+  RocketLaunchIcon,
+  ClockIcon
 } from '@heroicons/react/24/outline'
-import ContactForm from '../components/ContactForm'
 
 const values = [
   {
@@ -104,36 +104,49 @@ export default function AboutPage() {
       {/* Contact Section */}
       <section className="py-section md:py-section">
         <div className="max-w-content mx-auto px-gutter">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Scale?</h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-                Let's discuss your GTM challenges and explore how we can help you build an AI-powered 
-                system that scales faster than traditional approaches.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
-                  <span>30-minute strategy call</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
-                  <span>Free GTM audit</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
-                  <span>Custom recommendations</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
-                  <span>No sales pitch—just insights</span>
-                </div>
-              </div>
-            </div>
+          <div className="text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Scale?</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
+              Let's discuss your GTM challenges and explore how we can help you build an AI-powered 
+              system that scales faster than traditional approaches.
+            </p>
 
-            <div className="bg-white dark:bg-dark-bg p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold mb-6">Get Your Free GTM Audit</h3>
-              <ContactForm />
+            <div className="bg-white dark:bg-dark-bg p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
+              <div className="text-center">
+                <ClockIcon className="h-16 w-16 text-neon-primary mx-auto mb-6" />
+                <h3 className="text-2xl font-bold mb-4">30-Minute Strategy Call</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                  Free GTM audit and AI automation consultation
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center justify-center">
+                    <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
+                    <span>30-minute strategy call</span>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
+                    <span>Free GTM audit</span>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
+                    <span>Custom recommendations</span>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
+                    <span>No sales pitch—just insights</span>
+                  </div>
+                </div>
+                
+                <a
+                  href="https://calendly.com/briannzau/n-a-intro-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-block w-full text-center"
+                >
+                  Schedule Your Call
+                </a>
+              </div>
             </div>
           </div>
         </div>

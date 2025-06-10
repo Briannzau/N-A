@@ -4,7 +4,6 @@ import { useInView } from 'react-intersection-observer'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import ParticleBackground from './components/ParticleBackground'
-import ContactForm from './components/ContactForm'
 import { 
   MagnifyingGlassIcon, 
   MapIcon, 
@@ -18,7 +17,8 @@ import {
   ArrowRightIcon,
   RocketLaunchIcon,
   LightBulbIcon,
-  CpuChipIcon
+  CpuChipIcon,
+  ClockIcon
 } from '@heroicons/react/24/outline'
 
 const processSteps = [
@@ -146,12 +146,14 @@ export default function HomePage() {
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
               We consult, design, and implement seamless AI workflows that turn ideas into scalable growth.
             </p>
-            <Link 
-              href="/contact"
+            <a 
+              href="https://calendly.com/briannzau/n-a-intro-call"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block btn-primary text-lg px-8 py-4 animate-pulse-glow"
             >
               Book a Free Strategy Call
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -333,37 +335,51 @@ export default function HomePage() {
       {/* Contact Section */}
       <section className="py-16 md:py-20">
         <div className="max-w-content mx-auto px-gutter">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            <div>
-              <h2 className="text-2xl md:text-4xl font-bold mb-6">
-                Schedule your free 30-minute strategy call
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
-                We&apos;ll audit your GTM strategy and explore AI workflow opportunities. No sales pitch—just 
-                actionable insights you can implement immediately.
-              </p>
-              <div className="space-y-3">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
-                  <span className="text-sm">30-minute discovery call</span>
+          <div className="text-center">
+            <h2 className="text-2xl md:text-4xl font-bold mb-6">
+              Schedule your free 30-minute strategy call
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
+              We&apos;ll audit your GTM strategy and explore AI workflow opportunities. No sales pitch—just 
+              actionable insights you can implement immediately.
+            </p>
+            
+            <div className="bg-white dark:bg-dark-bg p-8 rounded-lg shadow-lg max-w-2xl mx-auto mb-8">
+              <div className="text-center">
+                <ClockIcon className="h-16 w-16 text-neon-primary mx-auto mb-6" />
+                <h3 className="text-2xl font-bold mb-4">30-Minute Strategy Call</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                  Free GTM audit and AI automation consultation
+                </p>
+                
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-center justify-center">
+                    <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
+                    <span className="text-sm">30-minute discovery call</span>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
+                    <span className="text-sm">GTM strategy audit</span>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
+                    <span className="text-sm">AI automation opportunities</span>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
+                    <span className="text-sm">Custom roadmap & recommendations</span>
+                  </div>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
-                  <span className="text-sm">GTM strategy audit</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
-                  <span className="text-sm">AI automation opportunities</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
-                  <span className="text-sm">Custom roadmap & recommendations</span>
-                </div>
+                
+                <a
+                  href="https://calendly.com/briannzau/n-a-intro-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-block w-full text-center"
+                >
+                  Schedule Your Call
+                </a>
               </div>
-            </div>
-
-            <div className="bg-white dark:bg-dark-bg p-6 rounded-lg shadow-lg">
-              <ContactForm />
             </div>
           </div>
         </div>
