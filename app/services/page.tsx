@@ -1,264 +1,257 @@
-"use client"
+'use client'
 
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Target, Settings, Zap, Users, BarChart, Brain, Workflow, MessageSquare, Database } from "lucide-react"
-import Link from "next/link"
+import { useInView } from 'react-intersection-observer'
+import { 
+  SparklesIcon, 
+  BoltIcon, 
+  PresentationChartLineIcon, 
+  UserGroupIcon,
+  CheckIcon,
+  ArrowRightIcon
+} from '@heroicons/react/24/outline'
+import Link from 'next/link'
 
 const services = [
   {
-    icon: Target,
-    title: "Product-Market Fit Discovery",
-    description: "Find your ideal customer profile and perfect your value proposition",
+    icon: SparklesIcon,
+    title: 'AI-Driven Lead Generation',
+    description: 'Transform your prospecting with intelligent automation that identifies, enriches, and engages your ideal customers at scale.',
     features: [
-      "ICP Research & Validation",
-      "Messaging Framework Development",
-      "Channel Testing & Optimization",
-      "Value Proposition Refinement",
-      "Early Customer Feedback Loops",
+      'Automated prospect identification using AI',
+      'Real-time data enrichment and validation',
+      'Personalized outreach sequences',
+      'Lead scoring and qualification',
+      'Multi-channel engagement workflows'
     ],
-    price: "Starting at $15k",
-    timeline: "4-6 weeks",
+    deliverables: [
+      'Custom AI prospecting system',
+      'Integrated CRM workflows',
+      'Performance dashboards',
+      'Training and documentation'
+    ]
   },
   {
-    icon: Settings,
-    title: "GTM Stack Implementation",
-    description: "Build and integrate your complete go-to-market technology stack",
+    icon: BoltIcon,
+    title: 'Outbound & Inbound Workflows',
+    description: 'Intelligent sequences that nurture leads through every stage of your funnel, from first touch to closed deal.',
     features: [
-      "CRM Setup & Configuration",
-      "Marketing Automation",
-      "Sales Enablement Tools",
-      "Analytics & Reporting",
-      "Lead Routing & Scoring",
+      'Smart email sequences with AI personalization',
+      'Multi-touch campaigns across channels',
+      'Behavioral trigger automation',
+      'Lead nurturing workflows',
+      'Sales handoff optimization'
     ],
-    price: "Starting at $25k",
-    timeline: "6-8 weeks",
+    deliverables: [
+      'Automated nurture sequences',
+      'Cross-channel campaign setup',
+      'Lead routing system',
+      'Performance tracking'
+    ]
   },
   {
-    icon: Zap,
-    title: "AI-Powered Automation",
-    description: "Deploy intelligent agents to automate your entire GTM process",
+    icon: PresentationChartLineIcon,
+    title: 'Growth Analytics & Reporting',
+    description: 'Custom dashboards and AI-powered insights that help you make data-driven decisions and optimize your GTM performance.',
     features: [
-      "AI Sales Development Reps",
-      "Automated Lead Qualification",
-      "Personalized Outreach at Scale",
-      "Intelligent Follow-up Sequences",
-      "Predictive Analytics",
+      'Real-time performance dashboards',
+      'Predictive analytics and forecasting',
+      'Attribution modeling',
+      'ROI tracking and optimization',
+      'Automated reporting and alerts'
     ],
-    price: "Starting at $35k",
-    timeline: "8-12 weeks",
+    deliverables: [
+      'Custom analytics dashboard',
+      'Automated reporting system',
+      'KPI tracking setup',
+      'Data visualization tools'
+    ]
   },
   {
-    icon: Users,
-    title: "Team Training & Enablement",
-    description: "Upskill your team on modern GTM strategies and tools",
+    icon: UserGroupIcon,
+    title: 'Customer Success Automation',
+    description: 'AI-powered systems that proactively identify at-risk customers, automate support workflows, and drive expansion revenue.',
     features: [
-      "GTM Strategy Workshops",
-      "Tool-Specific Training",
-      "Process Documentation",
-      "Performance Optimization",
-      "Ongoing Support",
+      'Churn prediction and prevention',
+      'Automated onboarding sequences',
+      'Health score monitoring',
+      'Expansion opportunity identification',
+      'Support ticket automation'
     ],
-    price: "Starting at $10k",
-    timeline: "2-4 weeks",
-  },
-  {
-    icon: BarChart,
-    title: "Performance Optimization",
-    description: "Continuously improve your GTM performance with data-driven insights",
-    features: [
-      "Conversion Rate Optimization",
-      "A/B Testing Programs",
-      "Performance Analytics",
-      "ROI Measurement",
-      "Strategic Recommendations",
-    ],
-    price: "Starting at $20k",
-    timeline: "Ongoing",
-  },
-  {
-    icon: Brain,
-    title: "GTM Strategy Consulting",
-    description: "Strategic guidance from experienced GTM operators",
-    features: [
-      "Market Analysis",
-      "Competitive Intelligence",
-      "Go-to-Market Planning",
-      "Channel Strategy",
-      "Growth Roadmapping",
-    ],
-    price: "Starting at $12k",
-    timeline: "3-5 weeks",
-  },
+    deliverables: [
+      'Customer health monitoring',
+      'Automated onboarding flows',
+      'Churn prevention system',
+      'Expansion tracking dashboard'
+    ]
+  }
 ]
 
-const addOns = [
+const faqs = [
   {
-    icon: Workflow,
-    title: "Custom Integrations",
-    description: "Connect any tools in your stack with custom APIs and webhooks",
+    question: 'How long does implementation take?',
+    answer: 'Most implementations take 4-8 weeks depending on complexity. We work in sprints to deliver value quickly and iterate based on results.'
   },
   {
-    icon: MessageSquare,
-    title: "Content Creation",
-    description: "AI-powered content generation for all your GTM channels",
+    question: 'Do you work with early-stage startups?',
+    answer: 'Yes! We work with companies from pre-revenue to $100M+ ARR. Our approach scales with your business and budget.'
   },
   {
-    icon: Database,
-    title: "Data Migration",
-    description: "Seamlessly migrate data from legacy systems to your new stack",
+    question: 'What tools do you integrate with?',
+    answer: 'We work with all major CRM, marketing automation, and sales tools including HubSpot, Salesforce, Marketo, Outreach, and many others.'
   },
+  {
+    question: 'Do you provide ongoing support?',
+    answer: 'Absolutely. We offer retainer-based support for optimization, training, and strategic guidance after implementation.'
+  },
+  {
+    question: 'How do you measure success?',
+    answer: 'We focus on metrics that matter: qualified leads, conversion rates, deal velocity, and ultimately revenue growth. Every project includes clear KPIs and regular reporting.'
+  }
 ]
 
 export default function ServicesPage() {
+  const [heroRef, heroInView] = useInView({ threshold: 0.1, triggerOnce: true })
+  const [servicesRef, servicesInView] = useInView({ threshold: 0.1, triggerOnce: true })
+  const [faqRef, faqInView] = useInView({ threshold: 0.1, triggerOnce: true })
+
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
+    <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-6xl md:text-7xl font-bold mb-6 font-space-grotesk"
-          >
-            Our <span className="text-green-500">Services</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-gray-400 max-w-3xl mx-auto"
-          >
-            End-to-end GTM solutions designed to scale your business. From strategy to execution, we handle it all.
-          </motion.p>
+      <section 
+        ref={heroRef}
+        className="py-section md:py-32 bg-gradient-to-br from-light-bg via-light-section to-light-bg dark:from-dark-bg dark:via-dark-section dark:to-dark-bg relative overflow-hidden"
+      >
+        {/* Animated wave background */}
+        <div className="absolute inset-0 opacity-10">
+          <svg className="w-full h-full" viewBox="0 0 1200 600" preserveAspectRatio="none">
+            <path d="M0,300 C300,200 600,400 1200,300 L1200,600 L0,600 Z" fill="currentColor" className="text-neon-primary">
+              <animate attributeName="d" dur="10s" repeatCount="indefinite" 
+                values="M0,300 C300,200 600,400 1200,300 L1200,600 L0,600 Z;
+                        M0,300 C300,400 600,200 1200,300 L1200,600 L0,600 Z;
+                        M0,300 C300,200 600,400 1200,300 L1200,600 L0,600 Z" />
+            </path>
+          </svg>
+        </div>
+
+        <div className="max-w-content mx-auto px-gutter relative z-10">
+          <div className={`section-animate ${heroInView ? 'in-view' : ''} text-center`}>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+              Our <span className="text-neon-primary">Services</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              End-to-end AI-powered solutions designed to accelerate your go-to-market success and drive sustainable growth.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 mb-20">
+      {/* Services Detail Section */}
+      <section ref={servicesRef} className="py-section md:py-section">
+        <div className="max-w-content mx-auto px-gutter">
+          <div className="space-y-24">
             {services.map((service, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
+                className={`section-animate ${servicesInView ? 'in-view' : ''}`}
+                style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <Card className="bg-gray-900/50 border-gray-800 hover:border-green-500/50 transition-all duration-500 h-full backdrop-blur-sm">
-                  <CardContent className="p-8">
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="w-16 h-16 bg-green-500/10 rounded-2xl flex items-center justify-center">
-                        <service.icon className="w-8 h-8 text-green-500" />
-                      </div>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-green-500">{service.price}</div>
-                        <div className="text-sm text-gray-400">{service.timeline}</div>
-                      </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+                    <div className="w-16 h-16 bg-neon-primary/10 rounded-lg flex items-center justify-center mb-6">
+                      <service.icon className="h-8 w-8 text-neon-primary" />
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6">{service.title}</h2>
+                    <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">{service.description}</p>
+                    
+                    <div className="mb-8">
+                      <h3 className="text-xl font-semibold mb-4">Key Features:</h3>
+                      <ul className="space-y-3">
+                        {service.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-start">
+                            <CheckIcon className="h-5 w-5 text-neon-primary mt-0.5 mr-3 flex-shrink-0" />
+                            <span className="text-gray-600 dark:text-gray-400">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
 
-                    <h3 className="text-2xl font-bold mb-4 font-space-grotesk">{service.title}</h3>
-                    <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
-
-                    <div className="space-y-3 mb-8">
-                      {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mr-3" />
-                          <span className="text-gray-300">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <Button className="w-full bg-green-500 hover:bg-green-600 text-black font-semibold">
+                    <Link 
+                      href="/contact"
+                      className="inline-flex items-center btn-primary"
+                    >
                       Get Started
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                      <ArrowRightIcon className="h-5 w-5 ml-2" />
+                    </Link>
+                  </div>
+
+                  <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
+                    <div className="bg-white dark:bg-dark-bg p-8 rounded-lg shadow-lg">
+                      <h3 className="text-xl font-semibold mb-6">What You'll Get:</h3>
+                      <ul className="space-y-4">
+                        {service.deliverables.map((deliverable, deliverableIndex) => (
+                          <li key={deliverableIndex} className="flex items-center">
+                            <div className="w-2 h-2 bg-neon-primary rounded-full mr-3"></div>
+                            <span>{deliverable}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      
+                      <div className="mt-8 p-4 bg-neon-primary/5 rounded-lg border border-neon-primary/20">
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                          <strong>Timeline:</strong> 4-8 weeks implementation + ongoing optimization
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Add-ons Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-space-grotesk">
-              Additional <span className="text-green-500">Services</span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Enhance any package with these specialized services
+      {/* FAQ Section */}
+      <section ref={faqRef} className="py-section md:py-section bg-light-section dark:bg-dark-section">
+        <div className="max-w-4xl mx-auto px-gutter">
+          <div className={`section-animate ${faqInView ? 'in-view' : ''} text-center mb-16`}>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Frequently Asked Questions</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400">
+              Everything you need to know about our services and process.
             </p>
-          </motion.div>
+          </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {addOns.map((addon, index) => (
-              <motion.div
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
+                className={`section-animate ${faqInView ? 'in-view' : ''} bg-white dark:bg-dark-bg p-6 rounded-lg shadow-lg`}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <Card className="bg-gray-900/30 border-gray-800 hover:border-green-500/30 transition-all duration-300 text-center">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <addon.icon className="w-6 h-6 text-green-500" />
-                    </div>
-                    <h3 className="text-lg font-bold mb-3 font-space-grotesk">{addon.title}</h3>
-                    <p className="text-gray-400 text-sm">{addon.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
+                <p className="text-gray-600 dark:text-gray-400">{faq.answer}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-bold mb-8 font-space-grotesk"
-          >
-            Ready to <span className="text-green-500">scale</span>?
-          </motion.h2>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="flex flex-col sm:flex-row gap-6 justify-center"
-          >
-            <Button
-              size="lg"
-              asChild
-              className="bg-green-500 hover:bg-green-600 text-black font-semibold px-8 py-6 rounded-full"
-            >
-              <Link href="/contact">Book a Strategy Call</Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-              className="border-green-500 text-green-500 hover:bg-green-500 hover:text-black px-8 py-6 rounded-full"
-            >
-              <Link href="/portfolio">View Case Studies</Link>
-            </Button>
-          </motion.div>
+      <section className="py-section md:py-section">
+        <div className="max-w-content mx-auto px-gutter text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            Ready to <span className="text-neon-primary">accelerate</span> your growth?
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+            Let's discuss your GTM challenges and build a custom AI-powered solution that drives results.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact" className="btn-primary">
+              Book a Strategy Call
+            </Link>
+            <Link href="/case-studies" className="btn-secondary">
+              View Case Studies
+            </Link>
+          </div>
         </div>
       </section>
     </div>
