@@ -72,28 +72,24 @@ const partnershipReasons = [
     icon: RocketLaunchIcon,
     title: 'Scale Without Headcount',
     description: 'Our AI-powered systems handle the heavy lifting so your team can focus on strategy and high-value activities. Automate repetitive tasks, qualify leads 24/7, and scale your operations without adding overhead.',
-    stats: '3x faster growth with 50% less manual work',
     highlight: 'AI Automation'
   },
   {
     icon: LightBulbIcon,
     title: 'Proven GTM Expertise',
     description: 'We\'re not just consultants—we\'re operators who have scaled startups from zero to millions in ARR. Our team has hands-on experience building and optimizing GTM engines at high-growth companies.',
-    stats: '$100M+ in revenue generated for clients',
     highlight: 'Operator Experience'
   },
   {
     icon: CpuChipIcon,
     title: 'Cutting-Edge AI Technology',
     description: 'Leverage the latest AI and automation tools to gain unfair advantages over your competition. From predictive analytics to intelligent lead scoring, we deploy technology that gives you an edge.',
-    stats: '24/7 automated workflows that never sleep',
     highlight: 'Advanced Technology'
   },
   {
     icon: ChartBarIcon,
     title: 'Measurable ROI',
     description: 'Every strategy and implementation is designed to deliver measurable results from day one. We focus on metrics that matter: qualified leads, conversion rates, deal velocity, and revenue growth.',
-    stats: 'Average 300% ROI within 6 months',
     highlight: 'Data-Driven Results'
   }
 ]
@@ -255,19 +251,13 @@ export default function HomePage() {
                 >
                   <div className="bg-white dark:bg-dark-bg rounded-2xl p-8 md:p-12 shadow-xl border border-gray-200 dark:border-gray-700">
                     {/* Header */}
-                    <div className="flex items-start justify-between mb-8">
-                      <div className="flex items-center">
-                        <div className="w-16 h-16 bg-neon-primary/10 rounded-2xl flex items-center justify-center mr-6">
-                          <reason.icon className="h-8 w-8 text-neon-primary" />
-                        </div>
-                        <div>
-                          <div className="text-sm font-medium text-neon-primary mb-1">{reason.highlight}</div>
-                          <h3 className="text-2xl md:text-3xl font-bold text-light-text dark:text-dark-text">{reason.title}</h3>
-                        </div>
+                    <div className="flex items-center mb-8">
+                      <div className="w-16 h-16 bg-neon-primary/10 rounded-2xl flex items-center justify-center mr-6">
+                        <reason.icon className="h-8 w-8 text-neon-primary" />
                       </div>
-                      <div className="text-right">
-                        <div className="text-sm text-gray-500 dark:text-gray-400">Key Metric</div>
-                        <div className="text-lg font-semibold text-neon-primary">{reason.stats}</div>
+                      <div>
+                        <div className="text-sm font-medium text-neon-primary mb-1">{reason.highlight}</div>
+                        <h3 className="text-2xl md:text-3xl font-bold text-light-text dark:text-dark-text">{reason.title}</h3>
                       </div>
                     </div>
 
