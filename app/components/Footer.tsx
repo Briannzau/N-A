@@ -7,8 +7,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo & Description */}
           <div className="col-span-1 md:col-span-1">
-            <h3 className="text-xl font-bold mb-4">GXM.Agency</h3>
-            <p className="text-gray-400 text-sm">Growth eXperience Management</p>
+            <h3 className="text-xl font-bold mb-4">GXM</h3>
+            <p className="text-gray-400 text-sm">AI GTM Architects</p>
           </div>
 
           {/* Quick Links */}
@@ -24,18 +24,18 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold mb-4">Neural Systems</h4>
+            <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li><span className="text-gray-400">AI Lead Genesis</span></li>
-              <li><span className="text-gray-400">Neural Growth Workflows</span></li>
-              <li><span className="text-gray-400">Predictive Analytics</span></li>
-              <li><span className="text-gray-400">Autonomous Success Systems</span></li>
+              <li><span className="text-gray-400">AI Lead Generation</span></li>
+              <li><span className="text-gray-400">Outbound Automation</span></li>
+              <li><span className="text-gray-400">Growth Analytics</span></li>
+              <li><span className="text-gray-400">Customer Success AI</span></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2025 GXM.Agency. All rights reserved.</p>
+          <p>&copy; 2025 GXM. All rights reserved.</p>
         </div>
       </div>
     </footer>

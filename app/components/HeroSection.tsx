@@ -24,14 +24,14 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white leading-tight">
-          The Future of{' '}
+          Turn Vision into{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00FFDD] to-[#00D4AA] animate-pulse">
-            GXM
+            Velocity
           </span>
         </h1>
         
         <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-8 font-light">
-          Growth eXperience Management
+          AI-Driven Go-To-Market Systems
         </p>
         
         <a
@@ -40,7 +40,7 @@ export default function HeroSection() {
           rel="noopener noreferrer"
           className="inline-block px-8 py-4 bg-[#00FFDD] text-[#0a0c1c] font-semibold text-lg rounded-lg transition-all duration-300 hover:bg-[#00D4AA] hover:shadow-[0_0_30px_rgba(0,255,221,0.5)] hover:scale-105 transform"
         >
-          Enter the Matrix
+          Book a Free Strategy Call
         </a>
       </div>
       

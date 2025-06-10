@@ -36,11 +36,11 @@ export default function ContactPage() {
           <div className="max-w-content mx-auto px-gutter relative z-10">
             <div className={`section-animate ${heroInView ? 'in-view' : ''} text-center`}>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
-                Let's <span className="text-[#00FFDD]">Connect</span>
+                Let's <span className="text-[#00FFDD]">Talk</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                Ready to transform your growth strategy with AI? Let's discuss your challenges and 
-                explore how we can help you scale faster with GXM.
+                Ready to transform your go-to-market strategy with AI? Let's discuss your challenges and 
+                explore how we can help you scale faster.
               </p>
             </div>
           </div>
@@ -54,9 +54,9 @@ export default function ContactPage() {
           <div className="max-w-content mx-auto px-gutter relative z-10">
             <div className="max-w-6xl mx-auto">
               <div className={`section-animate ${formInView ? 'in-view' : ''} text-center mb-12`}>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Neural Discovery Session</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Book Your Strategy Call</h2>
                 <p className="text-lg text-gray-300 mb-8">
-                  Schedule your 30-minute neural discovery session and get started on your GXM transformation.
+                  Schedule your 30-minute strategy call directly and get started on your GTM transformation.
                 </p>
               </div>
 
@@ -65,9 +65,9 @@ export default function ContactPage() {
                 <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-8 rounded-lg border border-white/20 dark:border-gray-700/30 max-w-2xl mx-auto">
                   <div className="text-center">
                     <ClockIcon className="h-16 w-16 text-[#00FFDD] mx-auto mb-6" />
-                    <h3 className="text-2xl font-bold mb-4 text-white">Neural Discovery Session</h3>
+                    <h3 className="text-2xl font-bold mb-4 text-white">30-Minute Strategy Call</h3>
                     <p className="text-gray-300 mb-6">
-                      Free GXM audit and AI automation consultation
+                      Free GTM audit and AI automation consultation
                     </p>
                     <a
                       href="https://calendly.com/briannzau/n-a-intro-call"
@@ -75,37 +75,37 @@ export default function ContactPage() {
                       rel="noopener noreferrer"
                       className="inline-block w-full text-center px-8 py-4 bg-[#00FFDD] text-[#0a0c1c] font-semibold rounded-lg transition-all duration-300 hover:bg-[#00D4AA] hover:shadow-[0_0_30px_rgba(0,255,221,0.3)] hover:scale-105 transform"
                     >
-                      Enter the Matrix
+                      Schedule Your Call
                     </a>
                   </div>
                 </div>
               </div>
 
-              {/* 3-Column Grid Layout */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* 2-Column Grid Layout */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* What to Expect */}
                 <div className={`section-animate ${formInView ? 'in-view' : ''}`}>
                   <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-6 rounded-lg border border-white/20 dark:border-gray-700/30 h-full">
                     <div className="w-12 h-12 bg-[#00FFDD]/20 rounded-lg flex items-center justify-center mb-4">
                       <CheckCircleIcon className="h-6 w-6 text-[#00FFDD]" />
                     </div>
-                    <h3 className="text-lg font-semibold mb-4 text-white">Neural Analysis</h3>
+                    <h3 className="text-lg font-semibold mb-4 text-white">What to Expect</h3>
                     <div className="space-y-3">
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300 text-sm">30-minute deep dive session</p>
+                        <p className="text-gray-300 text-sm">30-minute discovery call</p>
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300 text-sm">Free GXM architecture audit</p>
+                        <p className="text-gray-300 text-sm">Free GTM audit</p>
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300 text-sm">Custom strategic blueprint</p>
+                        <p className="text-gray-300 text-sm">Custom proposal if there's a fit</p>
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300 text-sm">No corporate BS—just insights</p>
+                        <p className="text-gray-300 text-sm">No sales pitch—just insights</p>
                       </div>
                     </div>
                   </div>
@@ -117,11 +117,11 @@ export default function ContactPage() {
                     <div className="w-12 h-12 bg-[#00FFDD]/20 rounded-lg flex items-center justify-center mb-4">
                       <LightBulbIcon className="h-6 w-6 text-[#00FFDD]" />
                     </div>
-                    <h3 className="text-lg font-semibold mb-4 text-white">Neural Advantages</h3>
+                    <h3 className="text-lg font-semibold mb-4 text-white">Why Book a Call?</h3>
                     <div className="space-y-3">
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300 text-sm">Expert insights on your GXM approach</p>
+                        <p className="text-gray-300 text-sm">Expert insights on your GTM approach</p>
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
@@ -133,35 +133,7 @@ export default function ContactPage() {
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300 text-sm">Learn from proven operators</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Who We Help */}
-                <div className={`section-animate ${formInView ? 'in-view' : ''}`}>
-                  <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-6 rounded-lg border border-white/20 dark:border-gray-700/30 h-full">
-                    <div className="w-12 h-12 bg-[#00FFDD]/20 rounded-lg flex items-center justify-center mb-4">
-                      <UserGroupIcon className="h-6 w-6 text-[#00FFDD]" />
-                    </div>
-                    <h3 className="text-lg font-semibold mb-4 text-white">Target Operators</h3>
-                    <div className="space-y-3">
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300 text-sm">Stealth-stage startups</p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300 text-sm">Growing SaaS companies</p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300 text-sm">AI-native businesses</p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#00FFDD] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-300 text-sm">Scale-up companies</p>
+                        <p className="text-gray-300 text-sm">Learn from proven consultants</p>
                       </div>
                     </div>
                   </div>

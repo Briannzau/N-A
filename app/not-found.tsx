@@ -27,11 +27,11 @@ export default function NotFound() {
           </h1>
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Neural Path Not Found</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Page Not Found</h2>
         
         <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
           Looks like you're lost in the matrix. Let's get you back on track to building 
-          your AI-powered GXM strategy.
+          your AI-powered GTM strategy.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -39,14 +39,14 @@ export default function NotFound() {
             href="/"
             className="btn-primary inline-flex items-center animate-pulse-glow"
           >
-            Return to Matrix
+            Return Home
           </Link>
           
           <a 
             href="mailto:support@gxm.agency"
             className="text-neon-primary hover:text-neon-secondary transition-colors duration-200 underline"
           >
-            Report Neural Glitch
+            Report an issue
           </a>
         </div>
 

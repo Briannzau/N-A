@@ -24,73 +24,73 @@ import {
 const processSteps = [
   {
     icon: MagnifyingGlassIcon,
-    title: 'Neural Discovery',
-    description: 'Deep-dive analysis of your growth architecture and AI workflow opportunities.',
+    title: 'Discovery',
+    description: 'Live consultation to explore your GTM strategy and AI workflow opportunities.',
   },
   {
     icon: MapIcon,
-    title: 'Strategic Blueprint',
-    description: 'ROI projections, tech stack optimization, and execution timeline.',
+    title: 'Customized Roadmap',
+    description: 'ROI estimates, tech stack, and timeline.',
   },
   {
     icon: CogIcon,
-    title: 'System Integration',
-    description: 'We architect, deploy, and integrate AI-powered growth systems.',
+    title: 'Implementation & Integration',
+    description: 'We build, test, and integrate AI workflows.',
   },
   {
     icon: ChartBarIcon,
-    title: 'Continuous Evolution',
-    description: 'Real-time optimization and strategic recalibration.',
+    title: 'Optimization & Support',
+    description: 'Ongoing tweaks and strategic audits.',
   },
 ]
 
 const services = [
   {
     icon: SparklesIcon,
-    title: 'AI-Powered Lead Genesis',
-    description: 'Autonomous prospect identification, enrichment, and hyper-personalized engagement.',
+    title: 'AI-Driven Lead Generation',
+    description: 'Automate prospect identification, enrichment, and personalized outreach.',
   },
   {
     icon: BoltIcon,
-    title: 'Neural Growth Workflows',
-    description: 'Intelligent sequences that adapt and evolve based on user behavior patterns.',
+    title: 'Outbound & Inbound Workflows',
+    description: 'Intelligent sequences that nurture leads and drive qualified meetings.',
   },
   {
     icon: PresentationChartLineIcon,
-    title: 'Predictive Growth Analytics',
-    description: 'Custom dashboards with AI insights and predictive growth modeling.',
+    title: 'Growth Analytics & Reporting',
+    description: 'Custom dashboards, KPI management and AI insights.',
   },
   {
     icon: UserGroupIcon,
-    title: 'Autonomous Success Systems',
-    description: 'AI-driven customer lifecycle management and expansion automation.',
+    title: 'Customer Success Automation',
+    description: 'AI-powered ticket triage, feedback loops, and churn prevention.',
   },
 ]
 
 const partnershipReasons = [
   {
     icon: RocketLaunchIcon,
-    title: 'Scale Beyond Human Limits',
-    description: 'Our AI-powered systems operate 24/7, handling complex growth operations while your team focuses on strategic vision. Automate the mundane, amplify the extraordinary.',
-    highlight: 'AI Amplification'
+    title: 'Scale Without Headcount',
+    description: 'Our AI-powered systems handle the heavy lifting so your team can focus on strategy and high-value activities. Automate repetitive tasks, qualify leads 24/7, and scale your operations without adding overhead.',
+    highlight: 'AI Automation'
   },
   {
     icon: LightBulbIcon,
-    title: 'Battle-Tested Operators',
-    description: 'We\'re not consultants—we\'re founders and operators who\'ve scaled companies from stealth to unicorn status. Our playbooks are written in revenue, not theory.',
-    highlight: 'Founder DNA'
+    title: 'Proven GTM Expertise',
+    description: 'We\'re not just consultants—we\'re operators who have scaled startups from zero to millions in ARR. Our team has hands-on experience building and optimizing GTM engines at high-growth companies.',
+    highlight: 'Operator Experience'
   },
   {
     icon: CpuChipIcon,
-    title: 'Next-Gen Growth Stack',
-    description: 'Deploy bleeding-edge AI and automation tools that give you unfair advantages. From predictive analytics to autonomous workflows, we build your competitive moat.',
-    highlight: 'Future-Proof Tech'
+    title: 'Cutting-Edge AI Technology',
+    description: 'Leverage the latest AI and automation tools to gain unfair advantages over your competition. From predictive analytics to intelligent lead scoring, we deploy technology that gives you an edge.',
+    highlight: 'Advanced Technology'
   },
   {
     icon: ChartBarIcon,
-    title: 'Obsessive ROI Focus',
-    description: 'Every system and strategy is engineered for measurable impact from day one. We optimize for metrics that matter: qualified pipeline, conversion velocity, and sustainable growth.',
-    highlight: 'Results-Driven'
+    title: 'Measurable ROI',
+    description: 'Every strategy and implementation is designed to deliver measurable results from day one. We focus on metrics that matter: qualified leads, conversion rates, deal velocity, and revenue growth.',
+    highlight: 'Data-Driven Results'
   }
 ]
 
@@ -143,9 +143,9 @@ export default function HomePage() {
         
         <div className="max-w-content mx-auto px-gutter relative z-10">
           <div className={`section-animate ${processInView ? 'in-view' : ''} text-center mb-8`}>
-            <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">The GXM Protocol</h2>
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Our 4-Step Process</h2>
             <p className="text-lg text-gray-200 max-w-2xl mx-auto">
-              From neural discovery to autonomous optimization, we architect your growth transformation.
+              From discovery to optimization, we guide you through every step of your AI-powered GTM transformation.
             </p>
           </div>
 
@@ -174,9 +174,9 @@ export default function HomePage() {
         
         <div className="max-w-content mx-auto px-gutter relative z-10">
           <div className={`section-animate ${servicesInView ? 'in-view' : ''} text-center mb-8`}>
-            <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Neural Growth Systems</h2>
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Tailored AI-Powered Services</h2>
             <p className="text-lg text-gray-200 max-w-2xl mx-auto">
-              AI-powered solutions designed to accelerate your growth velocity.
+              Comprehensive solutions designed to accelerate your go-to-market success.
             </p>
           </div>
 
@@ -196,7 +196,7 @@ export default function HomePage() {
                   href="/services"
                   className="text-[#00FFDD] font-medium hover:underline"
                 >
-                  Explore System →
+                  Learn More →
                 </Link>
               </div>
             ))}
@@ -214,9 +214,9 @@ export default function HomePage() {
         
         <div className="max-w-content mx-auto px-gutter relative z-10">
           <div className={`section-animate ${aboutInView ? 'in-view' : ''} text-center mb-12`}>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Why Choose GXM?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Why Partner with Us?</h2>
             <p className="text-lg text-gray-200 max-w-3xl mx-auto">
-              The advantages that set us apart in the AI-powered growth space.
+              Discover the advantages that set us apart in the AI-powered GTM space.
             </p>
           </div>
 
@@ -324,29 +324,29 @@ export default function HomePage() {
         <div className="max-w-content mx-auto px-gutter relative z-10">
           <div className="text-center">
             <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">
-              Ready to Enter the Matrix?
+              Schedule your free 30-minute strategy call
             </h2>
             <p className="text-gray-200 mb-6 max-w-3xl mx-auto">
-              Schedule your neural discovery session. We&apos;ll audit your growth architecture and reveal 
-              AI automation opportunities. No corporate BS—just actionable intelligence.
+              We&apos;ll audit your GTM strategy and explore AI workflow opportunities. No sales pitch—just 
+              actionable insights you can implement immediately.
             </p>
             
             <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-6 rounded-lg border border-white/20 dark:border-gray-700/30 max-w-2xl mx-auto mb-6">
               <div className="text-center">
                 <ClockIcon className="h-12 w-12 text-[#00FFDD] mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3 text-white">Neural Discovery Session</h3>
+                <h3 className="text-xl font-bold mb-3 text-white">30-Minute Strategy Call</h3>
                 <p className="text-gray-200 mb-4">
-                  Free growth architecture audit and AI automation consultation
+                  Free GTM audit and AI automation consultation
                 </p>
                 
                 <div className="space-y-2 mb-6">
                   <div className="flex items-center justify-center">
                     <div className="w-2 h-2 bg-[#00FFDD] rounded-full mr-3"></div>
-                    <span className="text-sm text-gray-200">30-minute deep dive</span>
+                    <span className="text-sm text-gray-200">30-minute discovery call</span>
                   </div>
                   <div className="flex items-center justify-center">
                     <div className="w-2 h-2 bg-[#00FFDD] rounded-full mr-3"></div>
-                    <span className="text-sm text-gray-200">Growth architecture analysis</span>
+                    <span className="text-sm text-gray-200">GTM strategy audit</span>
                   </div>
                   <div className="flex items-center justify-center">
                     <div className="w-2 h-2 bg-[#00FFDD] rounded-full mr-3"></div>
@@ -354,7 +354,7 @@ export default function HomePage() {
                   </div>
                   <div className="flex items-center justify-center">
                     <div className="w-2 h-2 bg-[#00FFDD] rounded-full mr-3"></div>
-                    <span className="text-sm text-gray-200">Custom strategic blueprint</span>
+                    <span className="text-sm text-gray-200">Custom roadmap & recommendations</span>
                   </div>
                 </div>
                 
@@ -364,7 +364,7 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   className="inline-block w-full text-center px-8 py-4 bg-[#00FFDD] text-[#0a0c1c] font-semibold rounded-lg transition-all duration-300 hover:bg-[#00D4AA] hover:shadow-[0_0_30px_rgba(0,255,221,0.3)] hover:scale-105 transform"
                 >
-                  Enter the Matrix
+                  Schedule Your Call
                 </a>
               </div>
             </div>
