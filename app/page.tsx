@@ -3,7 +3,7 @@
 import { useInView } from 'react-intersection-observer'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import ParticleBackground from './components/ParticleBackground'
+import HeroSection from './components/HeroSection'
 import { 
   MagnifyingGlassIcon, 
   MapIcon, 
@@ -95,7 +95,6 @@ const partnershipReasons = [
 ]
 
 export default function HomePage() {
-  const [heroRef, heroInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [processRef, processInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [servicesRef, servicesInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [aboutRef, aboutInView] = useInView({ threshold: 0.1, triggerOnce: true })
@@ -131,31 +130,8 @@ export default function HomePage() {
 
   return (
     <div className="overflow-hidden">
-      {/* Hero Section - Reduced height */}
-      <section 
-        ref={heroRef}
-        className="relative h-screen flex items-center justify-center bg-hero-light dark:bg-hero-dark"
-      >
-        <ParticleBackground />
-        <div className="relative z-10 max-w-content mx-auto px-gutter text-center">
-          <div className={`section-animate ${heroInView ? 'in-view' : ''}`}>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-              Turn Vision into <span className="text-neon-primary">Velocity</span>
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-6 max-w-3xl mx-auto leading-relaxed">
-              Launch Smarter. Scale Faster.
-            </p>
-            <a 
-              href="https://calendly.com/briannzau/n-a-intro-call"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block btn-primary text-lg px-8 py-4 animate-pulse-glow"
-            >
-              Book a Free Strategy Call
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section with tsParticles */}
+      <HeroSection />
 
       {/* Process Section - Reduced padding */}
       <section 

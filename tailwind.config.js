@@ -36,6 +36,7 @@ module.exports = {
       animation: {
         'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
         'float': 'float 6s ease-in-out infinite',
+        'gradient-shift': 'gradientShift 8s ease-in-out infinite',
       },
       keyframes: {
         pulseGlow: {
@@ -45,6 +46,10 @@ module.exports = {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
+        },
+        gradientShift: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
         },
       },
       backgroundImage: {
