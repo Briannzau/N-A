@@ -45,7 +45,7 @@ export default function Navigation() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="text-2xl font-bold text-light-text dark:text-dark-text">
-              N/A
+              GXM.Agency
             </Link>
 
             {/* Desktop Navigation */}

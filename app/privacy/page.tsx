@@ -36,8 +36,8 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
             <p>
               If you have any questions about this Privacy Policy, please contact us at{' '}
-              <a href="mailto:privacy@na-agency.ai" className="text-neon-primary hover:underline">
-                privacy@na-agency.ai
+              <a href="mailto:privacy@gxm.agency" className="text-neon-primary hover:underline">
+                privacy@gxm.agency
               </a>
             </p>
           </section>

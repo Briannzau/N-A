@@ -22,14 +22,14 @@ const HexagonParticles = dynamic(() => import('../components/HexagonParticles'),
 const services = [
   {
     icon: SparklesIcon,
-    title: 'AI-Driven Lead Generation',
-    description: 'Transform your prospecting with intelligent automation that identifies, enriches, and engages your ideal customers at scale.',
+    title: 'AI-Powered Lead Genesis',
+    description: 'Transform your prospecting with autonomous intelligence that identifies, enriches, and engages your ideal customers at scale.',
     features: [
-      'Automated prospect identification using AI',
+      'Autonomous prospect identification using neural networks',
       'Real-time data enrichment and validation',
-      'Personalized outreach sequences',
-      'Lead scoring and qualification',
-      'Multi-channel engagement workflows'
+      'Hyper-personalized outreach sequences',
+      'Predictive lead scoring and qualification',
+      'Multi-channel engagement orchestration'
     ],
     deliverables: [
       'Custom AI prospecting system',
@@ -40,13 +40,13 @@ const services = [
   },
   {
     icon: BoltIcon,
-    title: 'Outbound & Inbound Workflows',
-    description: 'Intelligent sequences that nurture leads through every stage of your funnel, from first touch to closed deal.',
+    title: 'Neural Growth Workflows',
+    description: 'Intelligent sequences that adapt and evolve through every stage of your funnel, from first touch to expansion revenue.',
     features: [
       'Smart email sequences with AI personalization',
       'Multi-touch campaigns across channels',
       'Behavioral trigger automation',
-      'Lead nurturing workflows',
+      'Adaptive lead nurturing workflows',
       'Sales handoff optimization'
     ],
     deliverables: [
@@ -58,8 +58,8 @@ const services = [
   },
   {
     icon: PresentationChartLineIcon,
-    title: 'Growth Analytics & Reporting',
-    description: 'Custom dashboards and AI-powered insights that help you make data-driven decisions and optimize your GTM performance.',
+    title: 'Predictive Growth Analytics',
+    description: 'Custom dashboards and AI-powered insights that help you make data-driven decisions and optimize your GXM performance.',
     features: [
       'Real-time performance dashboards',
       'Predictive analytics and forecasting',
@@ -76,7 +76,7 @@ const services = [
   },
   {
     icon: UserGroupIcon,
-    title: 'Customer Success Automation',
+    title: 'Autonomous Success Systems',
     description: 'AI-powered systems that proactively identify at-risk customers, automate support workflows, and drive expansion revenue.',
     features: [
       'Churn prediction and prevention',
@@ -142,10 +142,10 @@ export default function ServicesPage() {
           <div className="max-w-content mx-auto px-gutter relative z-10">
             <div className={`section-animate ${heroInView ? 'in-view' : ''} text-center`}>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
-                Our <span className="text-[#00FFDD]">Services</span>
+                Our <span className="text-[#00FFDD]">Neural Systems</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                End-to-end AI-powered solutions designed to accelerate your go-to-market success and drive sustainable growth.
+                End-to-end AI-powered solutions designed to accelerate your growth velocity and drive sustainable expansion.
               </p>
             </div>
           </div>
@@ -173,7 +173,7 @@ export default function ServicesPage() {
                       <p className="text-lg text-gray-300 mb-8">{service.description}</p>
                       
                       <div className="mb-8">
-                        <h3 className="text-xl font-semibold mb-4 text-white">Key Features:</h3>
+                        <h3 className="text-xl font-semibold mb-4 text-white">Neural Capabilities:</h3>
                         <ul className="space-y-3">
                           {service.features.map((feature, featureIndex) => (
                             <li key={featureIndex} className="flex items-start">
@@ -188,14 +188,14 @@ export default function ServicesPage() {
                         href="/contact"
                         className="inline-flex items-center px-6 py-3 bg-[#00FFDD] text-black font-semibold rounded-lg hover:bg-[#00D4AA] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,221,0.3)]"
                       >
-                        Get Started
+                        Deploy System
                         <ArrowRightIcon className="h-5 w-5 ml-2" />
                       </Link>
                     </div>
 
                     <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
                       <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm p-8 rounded-lg border border-white/20 dark:border-gray-700/30">
-                        <h3 className="text-xl font-semibold mb-6 text-white">What You'll Get:</h3>
+                        <h3 className="text-xl font-semibold mb-6 text-white">System Deliverables:</h3>
                         <ul className="space-y-4">
                           {service.deliverables.map((deliverable, deliverableIndex) => (
                             <li key={deliverableIndex} className="flex items-center">
@@ -207,7 +207,7 @@ export default function ServicesPage() {
                         
                         <div className="mt-8 p-4 bg-[#00FFDD]/10 rounded-lg border border-[#00FFDD]/20">
                           <p className="text-sm text-gray-300">
-                            <strong className="text-white">Timeline:</strong> 4-8 weeks implementation + ongoing optimization
+                            <strong className="text-white">Deployment Timeline:</strong> 4-8 weeks implementation + ongoing optimization
                           </p>
                         </div>
                       </div>
@@ -226,9 +226,9 @@ export default function ServicesPage() {
           
           <div className="max-w-4xl mx-auto px-gutter relative z-10">
             <div className={`section-animate ${faqInView ? 'in-view' : ''} text-center mb-16`}>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Frequently Asked Questions</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Neural Network FAQ</h2>
               <p className="text-lg text-gray-300">
-                Everything you need to know about our services and process.
+                Everything you need to know about our systems and deployment process.
               </p>
             </div>
 
@@ -257,20 +257,20 @@ export default function ServicesPage() {
               Ready to <span className="text-[#00FFDD]">accelerate</span> your growth?
             </h2>
             <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-              Let's discuss your GTM challenges and build a custom AI-powered solution that drives results.
+              Let's discuss your growth challenges and build a custom AI-powered GXM system that drives results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/contact" 
                 className="px-6 py-3 bg-[#00FFDD] text-black font-semibold rounded-lg hover:bg-[#00D4AA] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,221,0.3)]"
               >
-                Book a Strategy Call
+                Enter the Matrix
               </Link>
               <Link 
                 href="/about" 
                 className="px-6 py-3 border-2 border-[#00FFDD] text-[#00FFDD] font-semibold rounded-lg hover:bg-[#00FFDD] hover:text-black transition-all duration-300"
               >
-                Learn About Us
+                Learn About GXM
               </Link>
             </div>
           </div>

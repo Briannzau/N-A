@@ -9,9 +9,9 @@ import CookieConsent from './components/CookieConsent'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'N/A - AI-Powered Go-To-Market Strategies',
-  description: 'We consult, design, and implement seamless AI workflows that turn ideas into scalable growth.',
-  keywords: 'AI, go-to-market, GTM, automation, consulting, startups, growth',
+  title: 'GXM.Agency - Growth eXperience Management',
+  description: 'GXM is the evolution of Go-To-Market — blending strategic execution, AI-powered automation, and full-cycle growth experience design into one unified framework.',
+  keywords: 'GXM, Growth eXperience Management, AI automation, growth strategy, startups, scale-up',
 }
 
 export default function RootLayout({

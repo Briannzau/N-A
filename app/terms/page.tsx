@@ -36,8 +36,8 @@ export default function TermsPage() {
             <h2 className="text-2xl font-bold mb-4">Contact Information</h2>
             <p>
               If you have any questions about these Terms of Service, please contact us at{' '}
-              <a href="mailto:legal@na-agency.ai" className="text-neon-primary hover:underline">
-                legal@na-agency.ai
+              <a href="mailto:legal@gxm.agency" className="text-neon-primary hover:underline">
+                legal@gxm.agency
               </a>
             </p>
           </section>
