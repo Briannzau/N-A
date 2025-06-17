@@ -91,7 +91,9 @@ export default function HeroSection() {
             asChild
             className="bg-green-500 hover:bg-green-600 text-black text-lg px-8 py-6 rounded-full transition-transform duration-300 hover:scale-105"
           >
-            <Link href="/contact">Get a Free GTM Audit</Link>
+            <a href="https://calendly.com/briannzau/valkara-intro-call" target="_blank" rel="noopener noreferrer">
+              Get a Free GTM Audit
+            </a>
           </Button>
 
           <Button

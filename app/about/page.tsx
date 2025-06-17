@@ -158,7 +158,7 @@ export default function AboutPage() {
                   </div>
 
                   <a
-                    href="https://calendly.com/briannzau/n-a-intro-call"
+                    href="https://calendly.com/briannzau/valkara-intro-call"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block w-full text-center px-8 py-4 bg-luxury-gold text-white font-semibold rounded-lg transition-all duration-300 hover:bg-luxury-gold-light hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] hover:scale-105 transform"
