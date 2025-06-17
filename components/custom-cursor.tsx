@@ -42,14 +42,16 @@ export default function CustomCursor() {
 
   return (
     <>
+      {/* Inner cursor dot */}
       <motion.div
-        className="fixed w-2 h-2 bg-green-500 rounded-full pointer-events-none z-50 mix-blend-difference"
+        className="fixed w-2 h-2 bg-luxury-gold rounded-full pointer-events-none z-50"
         style={{
           x: mouseX,
           y: mouseY,
           translateX: -4,
           translateY: -4,
-          scale: isHovering ? 1.5 : 1,
+          scale: isHovering ? 2 : 1,
+          boxShadow: isHovering ? "0 0 16px rgba(212, 175, 55, 0.8)" : "0 0 8px rgba(212, 175, 55, 0.4)",
         }}
         transition={{
           type: "spring",
@@ -58,14 +60,17 @@ export default function CustomCursor() {
         }}
       />
 
+      {/* Outer cursor ring */}
       <motion.div
-        className="fixed w-8 h-8 border border-green-500/50 rounded-full pointer-events-none z-50"
+        className="fixed w-8 h-8 border border-luxury-gold rounded-full pointer-events-none z-50"
         style={{
           x: mouseX,
           y: mouseY,
           translateX: -16,
           translateY: -16,
           scale: isHovering ? 1.5 : 1,
+          borderColor: isHovering ? "#F4D03F" : "#D4AF37",
+          boxShadow: isHovering ? "0 0 12px rgba(244, 208, 63, 0.6)" : "0 0 8px rgba(212, 175, 55, 0.3)",
         }}
         transition={{
           type: "spring",

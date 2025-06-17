@@ -6,6 +6,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -38,8 +39,8 @@ export default function Navigation() {
       >
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold font-space-grotesk">
-              N/A
+            <Link href="/" className="flex items-center">
+              <Image src="/velkara-logo.png" alt="Velkara" width={120} height={40} className="h-8 w-auto" />
             </Link>
 
             <div className="hidden md:flex items-center space-x-8">
@@ -47,17 +48,23 @@ export default function Navigation() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`relative text-sm font-medium transition-colors hover:text-green-500 ${
-                    pathname === item.href ? "text-green-500" : "text-gray-300"
+                  className={`relative text-sm font-medium transition-colors hover:text-brand-gold ${
+                    pathname === item.href ? "text-brand-gold" : "text-gray-300"
                   }`}
                 >
                   {item.name}
                   {pathname === item.href && (
-                    <motion.div layoutId="activeTab\" className="absolute -bottom-1 left-0 right-0 h-0.5 bg-green-500" />
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-gold"
+                    />
                   )}
                 </Link>
               ))}
-              <Button size="sm" className="bg-green-500 hover:bg-green-600 text-black font-semibold">
+              <Button
+                size="sm"
+                className="bg-brand-gold hover:bg-brand-black hover:text-brand-gold text-brand-black font-semibold"
+              >
                 Let's Talk
               </Button>
             </div>
@@ -87,7 +94,7 @@ export default function Navigation() {
                 >
                   <Link
                     href={item.href}
-                    className="text-2xl font-medium text-gray-300 hover:text-green-500 transition-colors"
+                    className="text-2xl font-medium text-gray-300 hover:text-brand-gold transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -95,7 +102,9 @@ export default function Navigation() {
                 </motion.div>
               ))}
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                <Button className="bg-green-500 hover:bg-green-600 text-black font-semibold">Let's Talk</Button>
+                <Button className="bg-brand-gold hover:bg-brand-black hover:text-brand-gold text-brand-black font-semibold">
+                  Let's Talk
+                </Button>
               </motion.div>
             </div>
           </motion.div>

@@ -19,7 +19,8 @@ export default function HeroSection() {
           transition={{ duration: 1.5 }}
           className="absolute inset-0"
           style={{
-            background: "radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.08), transparent 70%), linear-gradient(60deg, rgba(34, 197, 94, 0.05) 0%, transparent 50%, rgba(34, 197, 94, 0.05) 100%)",
+            background:
+              "radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.08), transparent 70%), linear-gradient(60deg, rgba(34, 197, 94, 0.05) 0%, transparent 50%, rgba(34, 197, 94, 0.05) 100%)",
             transform: "translateZ(0)",
             willChange: "transform",
           }}
@@ -76,7 +77,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-12 max-w-5xl mx-auto leading-relaxed font-inter"
         >
-          N/A helps startups and SMBs scale faster with AI-driven GTM strategies and stack execution.
+          Velkara helps startups and SMBs scale faster with AI-driven GTM strategies and stack execution.
         </motion.p>
 
         <motion.div
@@ -90,7 +91,9 @@ export default function HeroSection() {
             asChild
             className="bg-green-500 hover:bg-green-600 text-black text-lg px-8 py-6 rounded-full transition-transform duration-300 hover:scale-105"
           >
-            <Link href="/contact">Get a Free GTM Audit</Link>
+            <a href="https://calendly.com/briannzau/valkara-intro-call" target="_blank" rel="noopener noreferrer">
+              Get a Free GTM Audit
+            </a>
           </Button>
 
           <Button

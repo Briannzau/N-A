@@ -1,13 +1,8 @@
-'use client'
+"use client"
 
-import { useEffect, useState } from 'react'
-import dynamic from 'next/dynamic'
-
-// Dynamic import to avoid SSR issues
-const HexagonParticles = dynamic(() => import('./HexagonParticles'), {
-  ssr: false,
-  loading: () => <div className="absolute inset-0 bg-[#0a0c1c]" />
-})
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+import Link from "next/link"
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false)
@@ -16,36 +11,65 @@ export default function HeroSection() {
     setMounted(true)
   }, [])
 
+  if (!mounted) {
+    return (
+      <section className="min-h-screen flex items-center justify-center px-gutter relative">
+        <div className="max-w-content mx-auto text-center">
+          <div className="animate-pulse">
+            <div className="h-20 bg-luxury-gold/20 rounded mb-6"></div>
+            <div className="h-6 bg-luxury-gold/10 rounded mb-8 max-w-2xl mx-auto"></div>
+            <div className="flex gap-4 justify-center">
+              <div className="h-12 w-32 bg-luxury-gold/20 rounded"></div>
+              <div className="h-12 w-32 bg-luxury-gold/10 rounded"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-[#0a0c1c]">
-      {/* tsParticles Background */}
-      {mounted && <HexagonParticles />}
-      
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white leading-tight">
-          Turn Vision into{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00FFDD] to-[#00D4AA] animate-pulse">
-            Velocity
-          </span>
-        </h1>
-        
-        <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-8 font-light">
-          AI-Driven Go-To-Market Systems
-        </p>
-        
-        <a
-          href="https://calendly.com/briannzau/n-a-intro-call"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-8 py-4 bg-[#00FFDD] text-[#0a0c1c] font-semibold text-lg rounded-lg transition-all duration-300 hover:bg-[#00D4AA] hover:shadow-[0_0_30px_rgba(0,255,221,0.5)] hover:scale-105 transform"
+    <section className="min-h-screen flex items-center justify-center px-gutter relative bg-transparent">
+      <div className="max-w-content mx-auto text-center relative">
+        <motion.h1
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-luxury-charcoal"
         >
-          Book a Free Strategy Call
-        </a>
+          Turn Vision into <span className="luxury-text-gradient">Velocity</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-lg md:text-xl text-luxury-charcoal mb-8 max-w-3xl mx-auto leading-relaxed"
+        >
+          Velkara is the evolution of Go-To-Market — blending strategic execution, AI-powered automation, and full-cycle
+          growth experience design into one unified framework.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        >
+          <a
+            href="https://calendly.com/briannzau/valkara-intro-call"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary text-base px-8 py-4 inline-block"
+          >
+            Get Your Free GTM Audit
+          </a>
+
+          <Link href="/services" className="btn-secondary text-base px-8 py-4 inline-block">
+            Explore Our Services
+          </Link>
+        </motion.div>
       </div>
-      
-      {/* Gradient overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0c1c]/20 pointer-events-none" />
     </section>
   )
 }
