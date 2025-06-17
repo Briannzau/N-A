@@ -30,9 +30,6 @@ export default function CTAFooter() {
           <Button
             size="lg"
             className="bg-green-500 hover:bg-green-600 text-black text-lg px-8 py-6 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25"
-            onClick={() =>
-              window.open("https://calendly.com/briannzau/valkara-intro-call", "_blank", "noopener,noreferrer")
-            }
           >
             Book a Free GTM Strategy Session
           </Button>
@@ -62,14 +59,8 @@ export default function CTAFooter() {
                   rows={4}
                   className="bg-black/50 border-gray-700 focus:border-green-500"
                 />
-                <Button
-                  type="button"
-                  className="w-full bg-green-500 hover:bg-green-600 text-black font-semibold py-3"
-                  onClick={() =>
-                    window.open("https://calendly.com/briannzau/valkara-intro-call", "_blank", "noopener,noreferrer")
-                  }
-                >
-                  Book a Free GTM Strategy Session
+                <Button type="submit" className="w-full bg-green-500 hover:bg-green-600 text-black font-semibold py-3">
+                  Send Message
                 </Button>
               </form>
             </CardContent>

@@ -46,8 +46,8 @@ module.exports = {
         },
         // Official White & Gold Theme
         "luxury-white": "#FFFFFF",
-        "luxury-gold": "#D4AF37",
-        "luxury-gold-light": "#F4D03F",
+        "luxury-gold": "#e8c547",
+        "luxury-gold-light": "#f8d66d",
         "luxury-gold-dark": "#B8941F",
         "luxury-charcoal": "#333333",
         // Secondary accents (for highlights only)
@@ -74,7 +74,8 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
       maxWidth: {
         content: "1400px",
@@ -91,9 +92,11 @@ module.exports = {
       animation: {
         "pulse-gold": "pulseGold 3s ease-in-out infinite",
         float: "float 6s ease-in-out infinite",
-        "gradient-shift": "gradientShift 8s ease-in-out infinite",
+        "gradient-shift": "gradientShift 4s linear infinite",
         "luxury-glow": "luxuryGlow 2s ease-in-out infinite alternate",
         shimmer: "shimmer 3s linear infinite",
+        "chevron-pulse": "chevronPulse 1.2s ease-in-out infinite",
+        "scroll-logos": "scrollLogos 20s linear infinite",
       },
       keyframes: {
         pulseGold: {
@@ -105,8 +108,8 @@ module.exports = {
           "50%": { transform: "translateY(-10px)" },
         },
         gradientShift: {
-          "0%, 100%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
+          "0%": { backgroundPosition: "0% 50%" },
+          "100%": { backgroundPosition: "200% 50%" },
         },
         luxuryGlow: {
           "0%": { opacity: 0.8 },
@@ -115,6 +118,14 @@ module.exports = {
         shimmer: {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(100%)" },
+        },
+        chevronPulse: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.2)" },
+        },
+        scrollLogos: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
         },
       },
       backgroundImage: {

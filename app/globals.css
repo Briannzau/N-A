@@ -347,3 +347,238 @@ a:hover {
 .gold-glow-strong {
   text-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
 }
+
+/* Poppins Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap");
+
+/* Enhanced Hero Styles */
+.hero-glassmorphism {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-glassmorphism {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Animated Gradient Text */
+.gradient-text {
+  background: linear-gradient(90deg, #e8c547 0%, #f8d66d 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s linear infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Typewriter Animation */
+.typewriter {
+  border-right: 2px solid #e8c547;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    border-color: #e8c547;
+  }
+  51%,
+  100% {
+    border-color: transparent;
+  }
+}
+
+/* Chevron Animation */
+.chevron-bounce {
+  animation: chevronPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes chevronPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Enhanced Button Styles */
+.btn-primary-enhanced {
+  background: #e8c547;
+  border-radius: 8px;
+  padding: 16px 32px;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary-enhanced:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(232, 197, 71, 0.35);
+}
+
+.btn-primary-enhanced .arrow-icon {
+  transform: translateX(-10px);
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.btn-primary-enhanced:hover .arrow-icon {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.btn-secondary-enhanced {
+  border: 2px solid #e8c547;
+  background: transparent;
+  border-radius: 8px;
+  padding: 14px 30px;
+  font-weight: 600;
+  color: #e8c547;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary-enhanced:hover {
+  background: #e8c547;
+  color: #fff;
+}
+
+/* Sticky Navigation */
+.nav-sticky {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  height: 72px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 50;
+}
+
+.nav-link-enhanced {
+  font-weight: 600;
+  color: #333;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link-enhanced:hover {
+  color: #e8c547;
+}
+
+.nav-link-enhanced::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #e8c547;
+  transition: width 0.3s ease;
+}
+
+.nav-link-enhanced:hover::after {
+  width: 100%;
+}
+
+/* Trusted Logos Section */
+.logos-carousel {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.logos-track {
+  display: inline-flex;
+  animation: scrollLogos 20s linear infinite;
+}
+
+.logos-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-item {
+  filter: grayscale(100%);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  margin: 0 2rem;
+}
+
+.logo-item:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Wave Divider */
+.wave-divider {
+  height: 100px;
+  fill: #f9f9f9;
+  margin-bottom: -1px;
+}
+
+/* Enhanced Cards */
+.card-enhanced {
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.card-enhanced:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Section Spacing */
+.section-spacing {
+  margin: 32px 0;
+}
+
+/* Scroll Animations */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.scroll-fade-in.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Particles Canvas */
+.particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
