@@ -28,7 +28,7 @@ export default function CTASection() {
               asChild
               className="bg-green-500 hover:bg-green-600 text-black text-lg px-8 py-6 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25"
             >
-              <a href="https://calendly.com/briannzau/valkara-intro-call" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/briannzau/velkara-intro-call" target="_blank" rel="noopener noreferrer">
                 Book a Free GTM Strategy Session
               </a>
             </Button>
@@ -73,7 +73,7 @@ export default function CTASection() {
                   type="button"
                   className="w-full bg-green-500 hover:bg-green-600 text-black font-semibold py-4 text-lg"
                   onClick={() =>
-                    window.open("https://calendly.com/briannzau/valkara-intro-call", "_blank", "noopener,noreferrer")
+                    window.open("https://calendly.com/briannzau/velkara-intro-call", "_blank", "noopener,noreferrer")
                   }
                 >
                   Get My Free Audit

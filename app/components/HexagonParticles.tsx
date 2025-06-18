@@ -52,7 +52,7 @@ export default function HexagonParticles() {
           color: "#D4AF37", // Pure gold connections
           distance: 150,
           enable: true,
-          opacity: 0.1, // Reduced from 0.4
+          opacity: 0.2, // Increased from 0.1
           width: 1.5,
           triangles: {
             enable: false,
@@ -76,18 +76,18 @@ export default function HexagonParticles() {
             enable: true,
             area: 800,
           },
-          value: 40, // Reduced from 80
+          value: 80, // Increased from 40
         },
         opacity: {
-          value: 0.15, // Reduced from 0.6
+          value: 0.25, // Increased from 0.15
           random: {
             enable: true,
-            minimumValue: 0.05, // Reduced from 0.2
+            minimumValue: 0.1, // Increased from 0.05
           },
           animation: {
             enable: true,
             speed: 1,
-            minimumValue: 0.05, // Reduced from 0.2
+            minimumValue: 0.1, // Increased from 0.05
             sync: false,
           },
         },
@@ -98,7 +98,7 @@ export default function HexagonParticles() {
           },
         },
         size: {
-          value: { min: 1, max: 4 },
+          value: { min: 1, max: 6 }, // Increased max from 4 to 6
           random: {
             enable: true,
             minimumValue: 1,

@@ -1,8 +1,8 @@
-import Link from 'next/link'
+import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white dark:bg-dark-section">
+    <footer className="section-wrapper text-luxury-charcoal relative">
       <div className="max-w-content mx-auto px-gutter py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo & Description */}
@@ -15,10 +15,26 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="text-gray-400 hover:text-neon-primary transition-colors">Home</Link></li>
-              <li><Link href="/services" className="text-gray-400 hover:text-neon-primary transition-colors">Services</Link></li>
-              <li><Link href="/about" className="text-gray-400 hover:text-neon-primary transition-colors">About</Link></li>
-              <li><Link href="/contact" className="text-gray-400 hover:text-neon-primary transition-colors">Contact</Link></li>
+              <li>
+                <Link href="/" className="text-gray-400 hover:text-neon-primary transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-gray-400 hover:text-neon-primary transition-colors">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-gray-400 hover:text-neon-primary transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-400 hover:text-neon-primary transition-colors">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -26,10 +42,18 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li><span className="text-gray-400">AI Lead Generation</span></li>
-              <li><span className="text-gray-400">Outbound Automation</span></li>
-              <li><span className="text-gray-400">Growth Analytics</span></li>
-              <li><span className="text-gray-400">Customer Success AI</span></li>
+              <li>
+                <span className="text-gray-400">AI Lead Generation</span>
+              </li>
+              <li>
+                <span className="text-gray-400">Outbound Automation</span>
+              </li>
+              <li>
+                <span className="text-gray-400">Growth Analytics</span>
+              </li>
+              <li>
+                <span className="text-gray-400">Customer Success AI</span>
+              </li>
             </ul>
           </div>
         </div>

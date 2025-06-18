@@ -127,13 +127,12 @@ export default function ServicesPage() {
       <div className="relative z-10 pt-16">
         {/* Hero Section - Transparent background */}
         <section ref={heroRef} className="relative min-h-[80vh] flex items-center justify-center">
-          {/* Content */}
-          <div className="max-w-content mx-auto px-gutter relative z-10">
-            <div className={`section-animate ${heroInView ? "in-view" : ""} text-center`}>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-luxury-charcoal">
+          <div className="content-container">
+            <div className={`section-animate ${heroInView ? "in-view" : ""} text-section align-center`}>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-luxury-charcoal">
                 Our <span className="text-luxury-gold">Services</span>
               </h1>
-              <p className="text-lg md:text-xl text-luxury-charcoal max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl text-luxury-charcoal max-w-3xl">
                 End-to-end AI-powered solutions designed to accelerate your go-to-market success and drive sustainable
                 growth.
               </p>
@@ -141,64 +140,78 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Services Detail Section - Glass background */}
-        <section ref={servicesRef} className="py-section md:py-section relative">
-          {/* Glass background overlay */}
-          <div className="absolute inset-0 bg-luxury-white/80 backdrop-blur-md border-y border-luxury-gold/10"></div>
-
-          <div className="max-w-content mx-auto px-gutter relative z-10">
-            <div className="space-y-24">
+        {/* Services Detail Section */}
+        <section ref={servicesRef} className="section-responsive">
+          <div className="content-container">
+            <div className="grid-container grid-1" style={{ gap: "var(--spacing-3xl)" }}>
               {services.map((service, index) => (
                 <div
                   key={index}
                   className={`section-animate ${servicesInView ? "in-view" : ""}`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div className="grid-container grid-2 items-center">
                     <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                      <div className="w-16 h-16 bg-luxury-gold/20 rounded-lg flex items-center justify-center mb-6">
+                      <div className="card-icon" style={{ marginBottom: "var(--spacing-lg)" }}>
                         <service.icon className="h-8 w-8 text-luxury-gold" />
                       </div>
-                      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-luxury-charcoal">{service.title}</h2>
-                      <p className="text-lg text-luxury-charcoal mb-8">{service.description}</p>
+                      <h2
+                        className="text-3xl md:text-4xl font-bold text-luxury-charcoal"
+                        style={{ marginBottom: "var(--spacing-lg)" }}
+                      >
+                        {service.title}
+                      </h2>
+                      <p className="text-lg text-luxury-charcoal" style={{ marginBottom: "var(--spacing-xl)" }}>
+                        {service.description}
+                      </p>
 
-                      <div className="mb-8">
-                        <h3 className="text-xl font-semibold mb-4 text-luxury-charcoal">Key Features:</h3>
-                        <ul className="space-y-3">
+                      <div style={{ marginBottom: "var(--spacing-xl)" }}>
+                        <h3
+                          className="text-xl font-semibold text-luxury-charcoal"
+                          style={{ marginBottom: "var(--spacing-md)" }}
+                        >
+                          Key Features:
+                        </h3>
+                        <ul className="feature-list">
                           {service.features.map((feature, featureIndex) => (
-                            <li key={featureIndex} className="flex items-start">
-                              <CheckIcon className="h-5 w-5 text-luxury-gold mt-0.5 mr-3 flex-shrink-0" />
+                            <li key={featureIndex} className="feature-list-item">
+                              <CheckIcon
+                                className="h-5 w-5 text-luxury-gold flex-shrink-0"
+                                style={{ marginTop: "2px" }}
+                              />
                               <span className="text-luxury-charcoal">{feature}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
 
-                      <Link
-                        href="/contact"
-                        className="inline-flex items-center px-6 py-3 bg-luxury-gold text-white font-semibold rounded-lg hover:bg-luxury-gold-light transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.3)]"
-                      >
+                      <Link href="/contact" className="btn-primary">
                         Get Started
                         <ArrowRightIcon className="h-5 w-5 ml-2" />
                       </Link>
                     </div>
 
                     <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                      <div className="bg-luxury-white border border-luxury-gold/30 p-8 rounded-lg">
-                        <h3 className="text-xl font-semibold mb-6 text-luxury-charcoal">What You'll Get:</h3>
-                        <ul className="space-y-4">
-                          {service.deliverables.map((deliverable, deliverableIndex) => (
-                            <li key={deliverableIndex} className="flex items-center">
-                              <div className="w-2 h-2 bg-luxury-gold rounded-full mr-3"></div>
-                              <span className="text-luxury-charcoal">{deliverable}</span>
-                            </li>
-                          ))}
-                        </ul>
-
-                        <div className="mt-8 p-4 bg-luxury-gold/10 rounded-lg border border-luxury-gold/20">
-                          <p className="text-sm text-luxury-charcoal">
-                            <strong className="text-luxury-charcoal">Timeline:</strong> {service.timeline}
-                          </p>
+                      <div className="card-hover">
+                        <div className="card-content">
+                          <div className="card-body">
+                            <h3 className="text-xl font-semibold text-luxury-charcoal">What You'll Get:</h3>
+                            <ul className="feature-list">
+                              {service.deliverables.map((deliverable, deliverableIndex) => (
+                                <li key={deliverableIndex} className="feature-list-item">
+                                  <div className="feature-bullet"></div>
+                                  <span className="text-luxury-charcoal">{deliverable}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div className="card-footer">
+                            <div className="p-4 bg-luxury-gold/10 rounded-lg border border-luxury-gold/20">
+                              <p className="text-sm text-luxury-charcoal">
+                                <strong className="text-luxury-charcoal">Timeline:</strong> {service.timeline}
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -209,57 +222,49 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* FAQ Section - Glass background */}
-        <section ref={faqRef} className="py-section md:py-section relative">
-          {/* Glass background overlay */}
-          <div className="absolute inset-0 bg-luxury-white/90 backdrop-blur-md border-y border-luxury-gold/20"></div>
-
-          <div className="max-w-4xl mx-auto px-gutter relative z-10">
-            <div className={`section-animate ${faqInView ? "in-view" : ""} text-center mb-16`}>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-luxury-charcoal">Frequently Asked Questions</h2>
+        {/* FAQ Section */}
+        <section ref={faqRef} className="section-responsive">
+          <div className="content-container">
+            <div className={`section-animate ${faqInView ? "in-view" : ""} text-section align-center`}>
+              <h2 className="text-3xl md:text-5xl font-bold text-luxury-charcoal">Frequently Asked Questions</h2>
               <p className="text-lg text-luxury-charcoal">
                 Everything you need to know about our services and process.
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="grid-container grid-1">
               {faqs.map((faq, index) => (
                 <div
                   key={index}
-                  className={`section-animate ${faqInView ? "in-view" : ""} bg-luxury-white border border-luxury-gold/30 p-6 rounded-lg hover:border-luxury-gold transition-all duration-300`}
+                  className={`section-animate ${faqInView ? "in-view" : ""} card-hover`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <h3 className="text-xl font-semibold mb-3 text-luxury-charcoal">{faq.question}</h3>
-                  <p className="text-luxury-charcoal">{faq.answer}</p>
+                  <div className="card-content">
+                    <h3 className="text-xl font-semibold text-luxury-charcoal">{faq.question}</h3>
+                    <p className="text-luxury-charcoal">{faq.answer}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA Section - Glass background */}
-        <section className="py-section md:py-section relative">
-          {/* Glass background overlay */}
-          <div className="absolute inset-0 bg-luxury-white/80 backdrop-blur-md border-y border-luxury-gold/10"></div>
-
-          <div className="max-w-content mx-auto px-gutter text-center relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-luxury-charcoal">
-              Ready to <span className="text-luxury-gold">accelerate</span> your growth?
-            </h2>
-            <p className="text-lg text-luxury-charcoal mb-8 max-w-2xl mx-auto">
-              Let's discuss your GTM challenges and build a custom AI-powered solution that drives results.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="px-6 py-3 bg-luxury-gold text-white font-semibold rounded-lg hover:bg-luxury-gold-light transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.3)]"
-              >
+        {/* CTA Section */}
+        <section className="section-responsive">
+          <div className="content-container">
+            <div className="text-section align-center">
+              <h2 className="text-3xl md:text-5xl font-bold text-luxury-charcoal">
+                Ready to <span className="text-luxury-gold">accelerate</span> your growth?
+              </h2>
+              <p className="text-lg text-luxury-charcoal max-w-2xl">
+                Let's discuss your GTM challenges and build a custom AI-powered solution that drives results.
+              </p>
+            </div>
+            <div className="button-group">
+              <Link href="/contact" className="btn-primary">
                 Book a Strategy Call
               </Link>
-              <Link
-                href="/about"
-                className="px-6 py-3 border-2 border-luxury-gold text-luxury-gold font-semibold rounded-lg hover:bg-luxury-gold hover:text-white transition-all duration-300"
-              >
+              <Link href="/about" className="btn-secondary">
                 Learn About Us
               </Link>
             </div>

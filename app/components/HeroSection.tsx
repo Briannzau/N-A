@@ -28,8 +28,59 @@ export default function HeroSection() {
     )
   }
 
+  const TypingAnimation = () => {
+    const words = ["Velocity", "Growth", "Momentum", "ROI"]
+    const [currentWordIndex, setCurrentWordIndex] = useState(0)
+    const [currentText, setCurrentText] = useState("")
+    const [isDeleting, setIsDeleting] = useState(false)
+    const [isPaused, setIsPaused] = useState(false)
+
+    useEffect(() => {
+      const currentWord = words[currentWordIndex]
+
+      const timeout = setTimeout(
+        () => {
+          if (isPaused) {
+            setIsPaused(false)
+            setIsDeleting(true)
+            return
+          }
+
+          if (isDeleting) {
+            setCurrentText(currentWord.substring(0, currentText.length - 1))
+
+            if (currentText === "") {
+              setIsDeleting(false)
+              setCurrentWordIndex((prev) => (prev + 1) % words.length)
+            }
+          } else {
+            setCurrentText(currentWord.substring(0, currentText.length + 1))
+
+            if (currentText === currentWord) {
+              setIsPaused(true)
+            }
+          }
+        },
+        isDeleting ? 100 : isPaused ? 2000 : 150,
+      )
+
+      return () => clearTimeout(timeout)
+    }, [currentText, isDeleting, isPaused, currentWordIndex, words])
+
+    return (
+      <span className="luxury-text-gradient relative">
+        {currentText}
+        <motion.span
+          animate={{ opacity: [1, 0] }}
+          transition={{ duration: 0.8, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
+          className="inline-block w-1 h-[0.9em] bg-luxury-gold ml-1 align-middle"
+        />
+      </span>
+    )
+  }
+
   return (
-    <section className="min-h-screen flex items-center justify-center px-gutter relative bg-transparent">
+    <section className="min-h-screen flex items-center justify-center px-gutter relative">
       <div className="max-w-content mx-auto text-center relative">
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
@@ -37,7 +88,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-luxury-charcoal"
         >
-          Turn Vision into <span className="luxury-text-gradient">Velocity</span>
+          Turn Vision into <TypingAnimation />
         </motion.h1>
 
         <motion.p
@@ -57,7 +108,7 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <a
-            href="https://calendly.com/briannzau/valkara-intro-call"
+            href="https://calendly.com/briannzau/velkara-intro-call"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary text-base px-8 py-4 inline-block"

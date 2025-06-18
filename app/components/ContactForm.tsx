@@ -1,7 +1,9 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import { useToast } from '../providers/toast-provider'
+import type React from "react"
+
+import { useState } from "react"
+import { useToast } from "../providers/toast-provider"
 
 interface FormData {
   firstName: string
@@ -15,12 +17,12 @@ interface FormData {
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
-    firstName: '',
-    lastName: '',
-    company: '',
-    email: '',
-    phone: '',
-    description: '',
+    firstName: "",
+    lastName: "",
+    company: "",
+    email: "",
+    phone: "",
+    description: "",
     consent: false,
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -28,9 +30,9 @@ export default function ContactForm() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value,
+      [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     }))
   }
 
@@ -40,32 +42,32 @@ export default function ContactForm() {
 
     try {
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+
       // Here you would typically send to your webhook/API
-      console.log('Form submitted:', formData)
-      
-      addToast('Thanks! We\'ll send you a calendar link within 24 hrs.', 'success')
-      
+      console.log("Form submitted:", formData)
+
+      addToast("Thanks! We'll send you a calendar link within 24 hrs.", "success")
+
       // Reset form
       setFormData({
-        firstName: '',
-        lastName: '',
-        company: '',
-        email: '',
-        phone: '',
-        description: '',
+        firstName: "",
+        lastName: "",
+        company: "",
+        email: "",
+        phone: "",
+        description: "",
         consent: false,
       })
     } catch (error) {
-      addToast('Something went wrong. Please try again.', 'error')
+      addToast("Something went wrong. Please try again.", "error")
     } finally {
       setIsSubmitting(false)
     }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6 content-panel">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="firstName" className="block text-sm font-medium mb-2">
@@ -177,7 +179,7 @@ export default function ContactForm() {
         disabled={isSubmitting}
         className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {isSubmitting ? 'Submitting...' : 'Book My Call'}
+        {isSubmitting ? "Submitting..." : "Book My Call"}
       </button>
     </form>
   )
